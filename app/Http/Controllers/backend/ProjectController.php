@@ -29,13 +29,20 @@ class ProjectController extends Controller
             DB::beginTransaction();
             $data = $request->all();
             $data['user_id'] = Auth::id();
-            Project::query()->create($data);
+             $project = Project::query()->create($data);
+            if ($request->hasFile('images')) {
+                foreach ($request->file('images', []) as $file) {
+                    $project->addMedia($file)
+                        ->usingName('project/'.$data['user_id'] )
+                        ->toMediaCollection('project', 'public');
+                }
+            }
             DB::commit();
             return redirect()->route('owner.dashboard');
 
         }catch (\Throwable $e) {
             DB::rollBack();
-            dd($e->getCode());
+            dd($e);
         }
     }
 

@@ -15,7 +15,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{route('projects.store')}}" method="post">
+                            <form action="{{route('projects.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-body">
                                     <h5 class="card-title">About Project</h5>
@@ -104,10 +104,8 @@
                                     </div>
                                     <div class="row mt-3">
                                         <div class="col-12">
-                                            <div class="card text-center pt-3">
-                                                <div class="card-body" style="height:90px">
-                                                    Upload image here
-                                                </div>
+                                            <div class="card text-center">
+                                                <input type="file" name="images[]" multiple class="form-control">
                                             </div>
                                         </div>
                                     </div>
