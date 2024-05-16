@@ -23,3 +23,4 @@
 
 <link rel="stylesheet" type="text/css" href="{{asset('/')}}/assets/libs/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 <link rel="stylesheet" type="text/css" href="{{asset('/')}}/assets/libs/ckeditor/samples/css/samples.css">
+<link rel="stylesheet" href="{{asset('/')}}/css/lightbox.min.css">

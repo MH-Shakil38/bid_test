@@ -79,4 +79,9 @@ class UserController extends Controller
 
         return redirect()->route('staff')->with('success', 'User created successfully');
     }
+
+    public function uploadProfileImage()
+    {
+        dd(1);
+    }
 }

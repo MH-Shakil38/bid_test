@@ -20,11 +20,10 @@
                                         <p class="project-hours pt-3"><span>Fixed</span> - Expert level -  More than 6 months, 300+ $ - Renewed 17 minutes ago</p>
                                         <span class="mb-3 d-block">{!! $info->details !!}</span>
                                         <p class="project-images">
-                                            @forelse($info->getMedia('*') as $info)
-                                                <a href="#"><img src="{{$info->getFullUrl()}}" title="nnoo"></a>
+                                            @forelse($info->getMedia('*') as $img)
+                                                <a class="example-image-link" href="{{$img->getFullUrl()}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{$img->getFullUrl()}}" alt=""/></a>
                                             @empty
                                             @endforelse
-                                                <a href="#"><img src="{{asset('/')}}/images/ff.jpg"></a>
                                         </p>
                                         <hr>
                                         <ul class="pl-3">
@@ -62,9 +61,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <p>Total Bids : 20</p>
-                        <p>Bid End Date: 30-July-2020</p>
-                        <p>Bid End Time: 05h :30m</p>
+                        <p>Total Bids : {{bid_count($info->id)}}</p>
+                        <p>Bid End Date: {{bid_date($info->due_date)}}</p>
+                        <p>Bid End Time: {{bid_time($info->bid_end)}}</p>
                     </div>
                 </div>
             </div>

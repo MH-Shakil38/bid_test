@@ -9,7 +9,6 @@
                             <div class="card">
                                 <div class="card-body">
                                     <!-- Comment Row -->
-
                                     <h4 class="card-title mb-0">{{$info->title}}
                                         <a href="javascript:void">
                                             <i class="ti-heart float-right"></i>
@@ -24,11 +23,10 @@
                                     <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>
                                     <span class="mb-3 d-block details">{!! $info->details !!}</span>
                                     <p class="project-images">
-                                        <a class="example-image-link" href="{{asset('/')}}images/ff.jpg" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{asset('/')}}/images/ff.jpg" alt=""/></a>
-                                        <a class="example-image-link" href="{{asset('/')}}images/ff.jpg" data-lightbox="example-set" data-title="Or press the right arrow on your keyboard."><img class="example-image" src="{{asset('/')}}/images/ff.jpg" alt="" /></a>
-                                        <a class="example-image-link" href="{{asset('/')}}images/ff.jpg" data-lightbox="example-set" data-title="The next image in the set is preloaded as you're viewing."><img class="example-image" src="{{asset('/')}}/images/ff.jpg" alt="" /></a>
-                                        <a class="example-image-link" href="{{asset('/')}}images/ff.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="{{asset('/')}}/images/ff.jpg" alt="" /></a>
-                                        <a class="example-image-link" href="{{asset('/')}}images/ff.jpg" data-lightbox="example-set" data-title="Click anywhere outside the image or the X to the right to close."><img class="example-image" src="{{asset('/')}}/images/ff.jpg" alt="" /></a>
+                                        @forelse($info->getMedia('*') as $img)
+                                            <a class="example-image-link" href="{{$img->getFullUrl()}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{$img->getFullUrl()}}" alt=""/></a>
+                                        @empty
+                                        @endforelse
                                     </p>
                                     <hr>
                                     <ul class="pl-3">

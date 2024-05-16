@@ -130,7 +130,7 @@
                                     <!-- Message -->
                                     <a href="javascript:void(0)" class="message-item">
                                                 <span class="user-img">
-                                                    <img src="{{asset('/')}}/assets/images/users/1.jpg" alt="user" class="rounded-circle">
+                                                    <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" alt="users" class="rounded-circle">
                                                     <span class="profile-status online pull-right"></span>
                                                 </span>
                                         <div class="mail-contnet">
@@ -236,7 +236,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img src="{{asset('/')}}/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+                        <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" alt="users" height="30px" alt="user" class="rounded-circle" width="31">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <span class="with-arrow">
@@ -244,7 +244,7 @@
                                 </span>
                         <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
                             <div class="">
-                                <img src="{{asset('/')}}/assets/images/users/1.jpg" alt="user" class="img-circle" width="60">
+                                <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" height="60px" alt="user" class="img-circle" width="60">
                             </div>
                             <div class="m-l-10">
                                 <h4 class="m-b-0">{{auth()->user()->full_name}}</h4>

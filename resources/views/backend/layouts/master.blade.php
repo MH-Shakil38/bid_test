@@ -40,7 +40,7 @@
                         <!-- User Profile-->
                         <div class="user-profile dropdown m-t-20">
                             <div class="user-pic">
-                                <img src="{{asset('/')}}/assets/images/users/1.jpg" alt="users"
+                                <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" alt="users" style="max-height: 52px"
                                      class="rounded-circle img-fluid"/>
                             </div>
                             <div class="user-content hide-menu m-t-10">
@@ -83,6 +83,7 @@
 <!-- All Jquery -->
 <!-- ============================================================== -->
 @include('backend.layouts.include.footer-script')
+@yield('js')
 </body>
 
 </html>

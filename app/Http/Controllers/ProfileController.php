@@ -98,5 +98,19 @@ class ProfileController extends Controller
         }
     }
 
+    public function uploadProfileImage(Request $request)
+    {
+        $user = Auth::user();
+        if ($request->hasFile('profile_picture')) {
+            $user->clearMediaCollection('profile_picture'); // Clear existing profile image
+            $user->addMediaFromRequest('profile_picture')->toMediaCollection('profile_picture');
+            return redirect()->back()->with('success', 'Profile Picture Successfully Updated');
+        }
+        return redirect()->back()->with('error', 'File not uploaded');
+    }
+//$project->addMedia($file)
+//->usingName('project/'.$data['user_id'] )
+//->toMediaCollection('project', 'public');
+
 
 }

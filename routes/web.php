@@ -67,6 +67,8 @@ Route::middleware('auth')->group(function () {
 
 
     /**profile*/
+    // routes/web.php
+    Route::post('/change-profile-picture', [ProfileController::class, 'uploadProfileImage'])->name('change.profile.picture');
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::PUT('/password/update', [ProfileController::class, 'passwordUpdate'])->name('update.password');

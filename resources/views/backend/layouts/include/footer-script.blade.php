@@ -1,3 +1,4 @@
+<script src="{{asset('/')}}/js/lightbox-plus-jquery.min.js"></script>
 <script src="{{asset('/')}}/assets/libs/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('/')}}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
