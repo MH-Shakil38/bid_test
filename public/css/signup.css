@@ -1,0 +1,277 @@
+body {
+    background: #f4fafa;
+}
+header {
+    background: #FFF;
+    width: 100%;
+}
+.signup-block {
+    margin: 0 auto;
+    background: #FFF;
+    padding: 50px 20px;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35)
+}
+.signup-section {
+    padding: 50px 0;
+}
+.signup-header {
+    justify-content: space-between;
+}
+.signup-section h2 {
+    font-size: 24px;
+    text-align: center
+}
+.signup-section h6 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    padding: 0 0 20px 0; 
+}
+.signup-section input[type="text"],
+.signup-section input[type="password"],
+.form-control select{
+    width: 100%;
+    min-height: 40px;
+    height: 40px;
+    padding: 10px 19px 10px 37px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    color: #222;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    font-size: 13px;
+    line-height: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+.signup-section input[type="text"]:focus,
+.signup-section input[type="password"]:focus,
+.form-control select:focus {
+    outline: 0;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.signup-section label{
+    font-family: 'Open Sans', sans-serif;
+}
+.input-box {
+    margin: 0 0 30px 0;
+    flex-flow: column;
+}
+
+.d-flow-row {
+    flex-flow: row;
+}
+
+.form-control option,
+.form-control select {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.signup-btn-option {
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+.btn-block {
+    display: flex;
+    width: 100%;
+}
+.btn-block button {
+    width: 50%;
+    padding: 10px 0;
+    border: 0;
+    background: #FFF;
+    font-family: 'Open Sans', sans-serif;
+}
+.btn-block button:hover,
+.btn-block button:focus,
+.btn-block button:active {
+    background: #0068dd;
+    color: #FFF;
+    outline: 0;
+}
+.btn-container h4 {
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.username-box {
+    margin: 20px 0 0 0;
+}
+
+/* Customize the label (the container) */
+.checkbox-style {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-style input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-style:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-style input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-style input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-style .checkmark:after {
+  left: 9px;
+  top: 4px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.create-account-btn,
+.create-account-btn:hover,
+.create-account-btn:focus,
+.create-account-btn:active{
+    text-decoration: none;
+    outline: 0;
+    display: flex;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    background: #0068dd;
+    color: #FFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    width: 100%;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    border: 0;
+    padding: 12px 50px;
+    border-radius: 35px;
+    margin: 0 auto;
+}
+.email-verification {
+    list-style: none;
+    text-align: center;
+    margin: 40px 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.email-verification-content {
+    text-align: center;
+    margin: 20px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.login-title {
+    margin: 0 0 30px 0;
+}
+
+.signup-option-container {
+    background: #f9f9f9;
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    padding: 30px 20px;
+}
+.signup-option-container h6 {
+    position: relative;
+}
+.signup-option-container h6::after {
+    position: absolute;
+    content: "";
+    width: 60%;
+    background: #0068dd;
+    height: 2px;
+    top: 9px;
+    left: 19%;
+}
+
+.signup-option-container h6 span {
+    background: #f9f9f9;
+    z-index: 1;
+    position: relative;
+}
+.fa-envelope,
+.fa-user,
+.fa-lock,
+.fa-user-circle-o{
+    position: absolute;
+    left: 25px;
+    top: 42px;
+}
+
+.fa-user-circle-o{
+    position: absolute;
+    left: 15px;
+    top: 42px;
+}
+.po-relative,
+.username-box {
+    position: relative;
+}
+.d-flow-column {
+    flex-flow: column;
+}
+.notification-message {
+    font-size: 13px;
+    color: #E6A01E;
+    padding: 0 20px;
+    margin: 10px 0 0 0;
+    font-family: 'Open Sans', sans-serif;
+}
+.validation-message {
+    font-size: 13px;
+    color: #FF0000;
+    padding: 0 20px;
+    margin: 10px 0 0 0;    
+    font-family: 'Open Sans', sans-serif;
+}
+@media (max-width: 1200px) { 
+}
+
+@media (max-width: 1023px) { 
+}
+
+@media (min-width: 1200px) { }
+
+@media (min-width: 576px) { 
+    
+}

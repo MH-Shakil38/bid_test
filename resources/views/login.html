@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <title>Construction</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/signup.css">
+      <link rel="stylesheet" href="css/social-icon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,562;0,600;0,700;1,400;1,500;1,562;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <header class="maine mb-0">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="logo col-md-4">
+            <a href="{{route('home')}}"><img src="images/logo.png" alt="construction" /></a>
+        </div>
+        <div class="post-job col-md-6">
+          <ul class="navbar-nav header-top">
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">SIGNUP</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('job.post')}}" class="btn post-job-btn">post a job</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar main-navigation-bar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">FIND A CONTRACTOR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">HOME RENOVATIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">COMMERCIAL PROJECTS</a>
+              </li>
+
+            </ul>
+          </div>
+  </nav>
+
+  <section class="signup-section">
+      <div class="col-md-4 signup-block">
+          <h2 class="login-title">Log in and get to work</h2>
+
+          <div class="d-flex input-box">
+              <div class="col-md-12 col-sm-12">
+                  <label>Username or Email</label>
+                  <input type="text" name="" value="" maxlength="150" size="45" />
+              </div>
+          </div>
+
+          <div class="d-flex input-box">
+              <div class="col-md-12 col-sm-12">
+                  <label>Password</label>
+                  <input type="Password" name="" value="" maxlength="150" size="45" />
+              </div>
+          </div>
+
+
+          <div class="input-box">
+              <div class="col-md-12 col-sm-12">
+                  <input class="create-account-btn" type="button" value="Login" />
+              </div>
+          </div>
+
+          <div class="first-signup-block">
+              <div class="vl">
+                <span class="vl-innertext">or</span>
+              </div>
+             <div class="col">
+                <a href="#" class="fb btn">
+                  <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                 </a>
+                <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                  </i> Login with Google+
+                </a>
+              </div>
+          </div>
+
+          <div class="signup-option-container">
+              <h6><span>New to Construction?</span></h6>
+              <a href="{{route('register')}}" class="create-account-btn">Signup</a>
+          </div>
+      </div>
+  </section>
+
+ <footer>
+     <div class="container">
+         <div class="row">
+            <div class="col-md-5 col-sm-4 col-xs-12 footer-widget">
+                 <a href="javascript" class="footer-logo">
+                     <img src="images/logo-white.png" alt="construction" />
+                 </a>
+
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+             </div>
+
+             <div class="col-md-3 col-sm-3 col-xs-12 footer-link">
+                 <h5>Quick Links</h5>
+                 <ul>
+                     <li><a href="javascript:void()">About us</a></li>
+                     <li><a href="javascript:void()">Contact us</a></li>
+                     <li><a href="javascript:void()">privacy ploicy</a></li>
+                     <li><a href="javascript:void()">terms & Condition</a></li>
+                 </ul>
+             </div>
+
+             <div class="col-md-3 col-sm-3 col-xs-12 social-link">
+                <h5>Follow Us:</h5>
+                 <ul>
+                     <li class="facebook-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/facebook.png" alt="facebook" />
+                         </a>
+                     </li>
+
+                     <li class="twitter-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/twitter.png" alt="twitter" />
+                         </a>
+                     </li>
+
+                    <li class="instagram-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/instagram.png" alt="instagram" />
+                         </a>
+                     </li>
+
+                     <li class="pintrest-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/pintrest.png" alt="pintrest" />
+                         </a>
+                     </li>
+
+                    <li class="google-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/google-plus.png" alt="google plus" />
+                         </a>
+                     </li>
+
+                     <li class="youtube-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/youtube.png" alt="youtube" />
+                         </a>
+                     </li>
+
+                     <li class="dribble-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/dribble-icon.png" alt="dribble" />
+                         </a>
+                     </li>
+
+                     <li class="tumbler-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/tumbler.png" alt="tumbler" />
+                         </a>
+                     </li>
+                 </ul>
+
+                 <h6>15k followers</h6>
+             </div>
+         </div>
+
+         <div class="copyright">
+             <p>© 2020 Copyright</p>
+         </div>
+     </div>
+ </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+      <script src="js/script.js"></script>
+  </body>
+</html>

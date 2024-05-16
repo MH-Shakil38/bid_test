@@ -1,0 +1,107 @@
+.bid-option ul {
+    display: none;
+    position: absolute;
+    box-shadow: 0 1px 6px rgba(57,73,76,.35);
+    list-style: none;
+    background: #FFF;
+    padding: 10px 0;
+    right: 0;
+    min-width: 210px;
+}
+.bid-option ul li{
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: normal;
+}
+.bid-option li a {
+    font-size: 13px;
+    color: #000;
+}
+.bid-option li:hover {
+    background: #F1f1f1
+}
+.bid-option:hover ul {
+    display: block;
+}
+.bid-option {
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.dots {
+    font-size: 26px;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
+.bid-container-listing .card-body {
+    position: relative;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+}
+.raiting-container img {
+    width: 14px;
+}
+.bid-option {
+    float: right;
+    position: absolute;
+    right: 16px;
+    top: 0;
+}
+.filter-container {
+    background: #F9F9F9;
+    padding: 15px 15px 15px 15px;
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    margin: 0 0 20px 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter-container input[type="text"]{
+    height: 40px;
+    padding: 10px 19px;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    color: #222;
+    background-color: #fff;
+}
+.filter-container label {
+    margin: 0 10px 0 0;
+}
+.download-csv-btn {
+    float: right
+}
+.bidder-info-container {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;   
+}
+.bidder-block {
+    box-shadow: 0 1px 6px rgba(57,73,76,0.35);
+    padding: 1.25rem;
+    margin: 0 0 30px 0;
+}
+.bidder-info-container p,
+.bidder-info-container label{
+    margin: 0;
+    padding: 0;
+}
+.bider-bio {
+    margin-top: 10px;
+}
+.bid-action-block {
+    display: flex;
+}
+.bid-action-block button.btn{
+    font-size: 14px;
+    padding: 6px 20px;
+    min-width: inherit;
+    width: auto;
+}
+.bid-action-block .recject-block {
+    margin: 0 0 0 10px;
+}
+.bid-action-block {
+    margin: 15px 0 0 0;
+}

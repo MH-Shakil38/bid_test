@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>Construction</title>
+    <!-- Custom CSS -->
+    <link href="../assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link href="../assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+    <link href="../assets/libs/morris.js/morris.css" rel="stylesheet">
+     <link rel="stylesheet" href="../css/mystyle.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/style.min.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+         <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)">
+                        <i class="ti-menu ti-close"></i>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="{{route('home')}}">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../images/logo.png" width="200"  alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../images/logo-white.png" width="200" alt="homepage" class="light-logo" />
+                        </b>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti-more"></i>
+                    </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block">
+                            <a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar">
+                                <i class="sl-icon-menu font-20"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ti-bell font-20"></i>
+
+                            </a>
+                            <div class="dropdown-menu mailbox animated bounceInDown">
+                                <span class="with-arrow">
+                                    <span class="bg-primary"></span>
+                                </span>
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="drop-title bg-primary text-white">
+                                            <h4 class="m-b-0 m-t-5">4 New</h4>
+                                            <span class="font-light">Notifications</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center notifications">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">Michael Jorden</h5>
+                                                    <span class="mail-desc">Payement Recieved</span>
+                                                    <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">James Anderson</h5>
+                                                    <span class="mail-desc">Posted new project</span>
+                                                    <span class="time">9:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">Johnathan Doeting</h5>
+                                                    <span class="mail-desc">You can customize this template as you want</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">James Anderson</h5>
+                                                    <span class="mail-desc">Just see the my admin!</span>
+                                                    <span class="time">9:02 AM</span>
+                                                </div>
+                                            </a>
+
+                                            <a href="all-notification.html" class="message-item">
+                                                See all notification
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="font-20 ti-email"></i>
+
+                            </a>
+                            <div class="dropdown-menu mailbox animated bounceInDown" aria-labelledby="2">
+                                <span class="with-arrow">
+                                    <span class="bg-danger"></span>
+                                </span>
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="drop-title bg-danger text-white">
+                                            <h4 class="m-b-0 m-t-5">4 New</h4>
+                                            <span class="font-light">Messages</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="message-center message-body">
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="user-img">
+                                                    <img src="../images/john.png" alt="user" class="rounded-circle">
+                                                    <span class="profile-status online pull-right"></span>
+                                                </span>
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">Johnathan Doeting</h5>
+                                                    <span class="mail-desc">Looking for php dev</span>
+                                                    <span class="time">9:30 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="user-img">
+                                                    <img src="../assets/images/users/2.jpg" alt="user" class="rounded-circle">
+                                                    <span class="profile-status busy pull-right"></span>
+                                                </span>
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">Monster Admin</h5>
+                                                    <span class="mail-desc">Lorem Ipsum is simply dummy text</span>
+                                                    <span class="time">7:10 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="user-img">
+                                                    <img src="../assets/images/users/3.jpg" alt="user" class="rounded-circle">
+                                                    <span class="profile-status away pull-right"></span>
+                                                </span>
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">Michael Jorden</h5>
+                                                    <span class="mail-desc">I am frontend developer!</span>
+                                                    <span class="time">9:08 AM</span>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="message-item">
+                                                <span class="user-img">
+                                                    <img src="../assets/images/users/4.jpg" alt="user" class="rounded-circle">
+                                                    <span class="profile-status offline pull-right"></span>
+                                                </span>
+                                                <div class="mail-contnet">
+                                                    <h5 class="message-title">James Anderson</h5>
+                                                    <span class="mail-desc">Looking for QA</span>
+                                                    <span class="time">10:15 AM</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+
+
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box">
+                            <a class="nav-link waves-effect waves-dark" href="javascript:void(0)">
+                                <i class="ti-search font-16"></i>
+                            </a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter">
+                                <a class="srh-btn">
+                                    <i class="ti-close"></i>
+                                </a>
+                            </form>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="flag-icon flag-icon-us font-18"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right  animated bounceInDown" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="#">
+                                    <i class="flag-icon flag-icon-us"></i> English</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="flag-icon flag-icon-fr"></i> French</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="flag-icon flag-icon-es"></i> Spanish</a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="flag-icon flag-icon-de"></i> German</a>
+                            </div>
+                        </li> -->
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <img src="../images/john.png" alt="user" class="rounded-circle" width="31">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+                                <span class="with-arrow">
+                                    <span class="bg-primary"></span>
+                                </span>
+                                <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+                                    <div class="">
+                                        <img src="../images/john.png" alt="user" class="img-circle" width="60">
+                                    </div>
+                                    <div class="m-l-10">
+                                        <h4 class="m-b-0">{{auth()->user()->full_name}}</h4>
+                                        <p class=" m-b-0">{{auth()->user()->email}}</p>
+                                    </div>
+                                </div>
+                                <a class="dropdown-item" href="profile.html">
+                                    <i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                <a class="dropdown-item" href="javascript:void(0)">
+                                <a class="dropdown-item" href="javascript:void(0)">
+                                    <i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="p-l-30 p-10">
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li>
+                            <!-- User Profile-->
+                            <div class="user-profile dropdown m-t-20">
+                                <div class="user-pic">
+                                    <img src="../images/john.png" alt="users" class="rounded-circle img-fluid" />
+                                </div>
+                                <div class="user-content hide-menu m-t-10">
+                                    <h5 class="m-b-10 user-name font-medium">{{auth()->user()->full_name}}</h5>
+
+                                    <a href="javascript:void(0)" title="Logout" class="btn btn-circle btn-sm">
+                                        <i class="ti-power-off"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- End User Profile-->
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="dashboard-page.html" aria-expanded="true">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu">Dashboards </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="bid-project.html" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu">Bid On Project</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="active-project.html" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu">Active Projects</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark" href="complete-project.html" aria-expanded="false">
+                                <i class="icon-Car-Wheel"></i>
+                                <span class="hide-menu">Complete Project</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="form">
+                                    <div class="form-group row">
+                                      <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Search by Name</label>
+                                            <input type="text" class="form-control" name="first_name" id="first_name">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Search by Date</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                      </div>
+                                      <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label">Search by Status</label>
+                                            <select class="form-control custom-select">
+                                                <option>Active</option>
+                                                <option>Draft</option>
+                                                <option>Complete</option>
+                                                <option>Reject</option>
+                                            </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4>Bid Projects</h4>
+                        <div class="card">
+                            <div class="table-responsive">
+                                <table class="table v-middle">
+                                    <thead>
+                                        <tr class="bg-light">
+                                            <th class="border-top-0">Projects Name</th>
+                                            <th class="border-top-0">Bidder Name</th>
+                                            <th class="border-top-0">Start Date</th>
+                                            <th class="border-top-0">End Date</th>
+                                            <th class="border-top-0">Status</th>
+                                            <th class="border-top-0">Budget</th>
+                                            <th class="border-top-0">Question</th>
+                                            <th class="border-top-0">View</th>
+                                            <th class="border-top-0">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-danger">In progress</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-danger">In progress</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">---</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Pending</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">June 14, 2019</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-warning">Complete</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$2500</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-danger">In progress</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-danger">In progress</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">---</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">---</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-info">Pending</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$25</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="m-r-10">
+                                                        <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                    </div>
+                                                    <div class="">
+                                                        <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="#">Jhon Deo</a>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">May 14, 2018</span>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">June 14, 2019</span>
+                                            </td>
+                                            <td>
+                                                <label class="label label-warning">Complete</label>
+                                            </td>
+                                            <td>
+                                                <span class="text-muted">$2500</span>
+                                            </td>
+                                            <td>
+                                                <a href="#">2</a>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                            </td>
+                                            <td>
+                                                <a href="#" >Edit</a>
+                                                <a href="#" >Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chat-box">
+    <div class="msg_history">
+      <div class="incoming_msg">
+        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+        <div class="received_msg">
+          <div class="received_withd_msg">
+            <p>Test which is a new approach to have all
+              solutions</p>
+            <span class="time_date"> 11:01 AM    |    June 9</span></div>
+        </div>
+      </div>
+      <div class="outgoing_msg">
+        <div class="sent_msg">
+          <p>Test which is a new approach to have all
+            solutions</p>
+          <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+      </div>
+      <div class="incoming_msg">
+        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+        <div class="received_msg">
+          <div class="received_withd_msg">
+            <p>Test, which is a new approach to have</p>
+            <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+        </div>
+      </div>
+      <div class="outgoing_msg">
+        <div class="sent_msg">
+          <p>Apollo University, Delhi, India Test</p>
+          <span class="time_date"> 11:01 AM    |    Today</span> </div>
+      </div>
+      <div class="incoming_msg">
+        <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+        <div class="received_msg">
+          <div class="received_withd_msg">
+            <p>We work directly with our designers and suppliers,
+              and sell direct to you, which means quality, exclusive
+              products, at a price anyone can afford.</p>
+            <span class="time_date"> 11:01 AM    |    Today</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="type_msg">
+      <div class="input_msg_write">
+        <input type="text" class="write_msg" placeholder="Type a message">
+      </div>
+      <span>
+        <a href="="><i class="fa fa-file-o"></i></a>
+        <a href="="><i class="fa fa-file-image-o"></i></a>
+      </span>
+      <button class="msg_send_btn" type="button"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+    </div>
+  </div>
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+   <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- apps -->
+    <script src="../dist/js/app.min.js"></script>
+    <script src="../dist/js/app.init.dark.js"></script>
+    <script src="../dist/js/app-style-switcher.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!--chartis chart-->
+    <script src="../assets/libs/chartist/dist/chartist.min.js"></script>
+    <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <!--c3 charts -->
+    <script src="../assets/extra-libs/c3/d3.min.js"></script>
+    <script src="../assets/extra-libs/c3/c3.min.js"></script>
+    <!--chartjs -->
+    <script src="../assets/libs/raphael/raphael.min.js"></script>
+    <script src="../assets/libs/morris.js/morris.min.js"></script>
+    <script src="../dist/js/pages/c3-chart/data/c3-category-data.js"></script>
+    <script src="../dist/js/pages/dashboards/dashboard1.js"></script>
+</body>
+
+</html>

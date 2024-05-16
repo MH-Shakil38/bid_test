@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <title>Construction</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/mystyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,562;0,600;0,700;1,400;1,500;1,562;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <header class="maine mb-0">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="logo col-md-4">
+            <a href="{{route('home')}}"><img src="images/logo.png" alt="construction" /></a>
+        </div>
+        <div class="post-job col-md-6">
+          <ul class="navbar-nav header-top">
+            <li class="nav-item">
+            <a class="nav-link" href="Bidder/dashboard-page.html">Bidder</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="superadmin/dashboard-page.html">Contractor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">LOGIN</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('register')}}">SIGNUP</a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('job.post')}}" class="btn post-job-btn">post a job</a>
+          </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar main-navigation-bar navbar-expand-lg navbar-light">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">FIND A CONTRACTOR</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">HOME RENOVATIONS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">COMMERCIAL PROJECTS</a>
+              </li>
+
+            </ul>
+          </div>
+  </nav>
+
+  <section class="hero-section">
+      <h1 class="mb-5">Project looking <span>for...</span></h1>
+      <div class="search-block col-md-8">
+          <input type="text" placeholder="What Type Of Work You Need ?" maxlength="250" />
+          <a href="{{route('listing')}}" class="search-btn">find</a>
+      </div>
+  </section>
+
+  <section class="scope-section">
+    <div class="container d-flex">
+        <h4>Hire for any<br /> scope of work:</h4>
+
+        <div class="scope-widget">
+            <h5>Short-term tasks </h5>
+            <span>Build a pool of diverse experts for one-off tasks </span>
+        </div>
+
+        <div class="scope-widget">
+            <h5>Long term task</h5>
+            <span>Have a go-to team with specialized skills </span>
+        </div>
+
+        <div class="scope-widget">
+            <h5> Full-time contract work</h5>
+            <span>Expand your staff with a dedicated team </span>
+        </div>
+    </div>
+  </section>
+
+  <section class="construction-work d-flex">
+      <div class="col-md-6">
+          <div class="row">
+            <img src="images/construction-banner.jpg" alt="construction" class="img-fluid" />
+          </div>
+      </div>
+      <div class="col-md-6 construction-right-block">
+          <div class="row">
+             <h4>Basement Renovations - All you Need to Know</h4>
+              <p>Are you looking to finish or renovate your basement in order to convert this space into a more livable one? We've put together all the information you need to know before beginning your basement renovation. Whether you need advice in planning your basement reno, ideas to inspire you, or even quotes from qualified professionals/contractors, you'll be able to find what you need on this page.</p>
+
+              <a href="javascript:void" title="Read more" class="read-more-btn">Read more</a>
+          </div>
+      </div>
+  </section>
+
+  <section class="team-block">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+          <h3>How to finish your basement</h3>
+          <p>Basement finishing, in regards to comfort, is probably one of the best options to consider. It allows you to have more living space in your home without it costing as much as a home addition or even buying a new house. If you already have a finished basement, but it’s pretty bland, convert it into an inviting living space. You’ll be able to do what you like with the space. Here are just some examples:</p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="widget-inner-container d-flex">
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container">
+                        <h5>Build a home theatre</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container team-mid-block">
+                        <h5>Create an office space</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container">
+                        <h5>Add a children’s game room</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="widget-inner-container d-flex team-bottom-container">
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container">
+                        <h5>Put in an artist’s workshop</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container team-mid-block">
+                        <h5>Plumbing </h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+
+                <a href="javascript:void" class="col-md-4 col-sm-4 col-xs-12 team-widget">
+                    <div class="team-container">
+                        <h5>Flooring </h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                    </div>
+                </a>
+            </div>
+            <a href="javascript:void()" class="see-all-category-btn">see all category</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-work-block">
+      <div class="container">
+        <h2>How it works ?</h2>
+        <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h5>
+        <div class="work-container">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <img src="images/find.png" alt="find" />
+                <h4>Find</h4>
+                <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12 pt-3">
+                <img src="images/bid.png" alt="bid" />
+                <h4>Win the Bid</h4>
+                <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <img src="images/work.png" alt="work" />
+                <h4>work</h4>
+                <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <img src="images/pay.png" alt="pay" />
+                <h4>pay</h4>
+                <p>Post a job to tell us about your project. We'll quickly match you with the right freelancers.</p>
+            </div>
+        </div>
+      </div>
+  </section>
+  <section class="ads pt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <img class="img-fluid" src="images/banner2.jpg" />
+        </div>
+      </div>
+    </div>
+  </section>
+ <!--  <section class="package-section">
+      <div class="container">
+          <h6>It’s time to find your Style</h6>
+          <h3>Choose a plan that works for you</h3>
+          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h4>
+
+          <div class="package-container">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="package-innner-container">
+                        <div class="plan-header">
+                            <h3>Basic Plan</h3>
+                            <span>For medium sized teams</span>
+                            <h5>19 <span>$ / Month</span></h5>
+                        </div>
+
+                        <div class="plan-container">
+                            <ul>
+                                <li>10 Coins</li>
+                                <li>12h Support</li>
+                                <li>Risk-free for 30 days</li>
+                                <li>Very Good Performance</li>
+                                <li>Account manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="package-innner-container">
+                        <div class="plan-header">
+                            <h3>Meduim Plan</h3>
+                            <span>For medium sized teams</span>
+                            <h5>26 <span>$ / Month</span></h5>
+                        </div>
+
+                        <div class="plan-container">
+                            <ul>
+                                <li>30 Coins</li>
+                                <li>12h Support</li>
+                                <li>Risk-free for 30 days</li>
+                                <li>Very Good Performance</li>
+                                <li>Account manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="package-innner-container">
+                        <div class="plan-header">
+                            <h3>Hight Plan</h3>
+                            <span>For medium sized teams</span>
+                            <h5>54 <span>$ / Month</span></h5>
+                        </div>
+
+                        <div class="plan-container">
+                            <ul>
+                                <li>10 Coins</li>
+                                <li>12h Support</li>
+                                <li>Risk-free for 30 days</li>
+                                <li>Very Good Performance</li>
+                                <li>Account manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+          </div>
+      </div>
+  </section>   -->
+  <section class="testimonidal-section">
+      <div class="container">
+        <h6>testimonials</h6>
+        <h3>We’ve heard things like…</h3>
+        <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</h4>
+
+        <div class="testimonial-container">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="client-container">
+                    <div class="testimonial">
+                        <div class="client-img">
+                            <img src="images/john.png" alt="john" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        <span class="client-name">John Doe</span>
+                    </div>
+
+                    <img class="client-compnay" width="150" src="images/google.png" alt="google" />
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="client-container">
+                    <div class="testimonial">
+                        <div class="client-img">
+                            <img src="images/john.png" alt="john" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        <span class="client-name">John Doe</span>
+                    </div>
+
+                    <img class="client-compnay" width="150" src="images/dribble.png" alt="dribble" />
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="client-container">
+                    <div class="testimonial">
+                        <div class="client-img">
+                            <img src="images/john.png" alt="john" />
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        <span class="client-name">John Doe</span>
+                    </div>
+
+                    <img class="client-compnay" width="150" src="images/envato.png" alt="envato" />
+                </div>
+            </div>
+        </div>
+      </div>
+  </section>
+ <footer>
+     <div class="container">
+         <div class="row">
+            <div class="col-md-5 col-sm-4 col-xs-12 footer-widget">
+                 <a href="javascript" class="footer-logo">
+                     <img src="images/logo-white.png" alt="construction" />
+                 </a>
+
+                 <p>Basement Renovation in Toronto has been helping homeowners in the greater Toronto area add thousands of dollars to their overall property values through basement renovation ever since this time. Unlike other basement remodelling and home renovation companies, we employ only the most skilled and experienced remodelling experts, as well as use only the most state-of-the-art 3D modelling and computer-aided design software.</p>
+             </div>
+
+             <div class="col-md-3 col-sm-3 col-xs-12 footer-link">
+                 <h5>Quick Links</h5>
+                 <ul>
+                     <li><a href="javascript:void()">About us</a></li>
+                     <li><a href="javascript:void()">Contact us</a></li>
+                     <li><a href="javascript:void()">privacy ploicy</a></li>
+                     <li><a href="javascript:void()">terms & Condition</a></li>
+                 </ul>
+             </div>
+
+             <div class="col-md-3 col-sm-3 col-xs-12 social-link">
+                <h5>Follow Us:</h5>
+                 <ul>
+                     <li class="facebook-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/facebook.png" alt="facebook" />
+                         </a>
+                     </li>
+
+                     <li class="twitter-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/twitter.png" alt="twitter" />
+                         </a>
+                     </li>
+
+                    <li class="instagram-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/instagram.png" alt="instagram" />
+                         </a>
+                     </li>
+
+                     <li class="pintrest-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/pintrest.png" alt="pintrest" />
+                         </a>
+                     </li>
+
+                    <li class="google-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/google-plus.png" alt="google plus" />
+                         </a>
+                     </li>
+
+                     <li class="youtube-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/youtube.png" alt="youtube" />
+                         </a>
+                     </li>
+
+                     <li class="dribble-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/dribble-icon.png" alt="dribble" />
+                         </a>
+                     </li>
+
+                     <li class="tumbler-icon social-icons">
+                         <a hre="javascript:void()">
+                             <img src="images/tumbler.png" alt="tumbler" />
+                         </a>
+                     </li>
+                 </ul>
+
+                 <h6>15k followers</h6>
+             </div>
+         </div>
+
+         <div class="copyright">
+             <p>© 2020 Copyright</p>
+         </div>
+     </div>
+ </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
