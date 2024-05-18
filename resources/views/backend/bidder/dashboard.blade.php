@@ -113,102 +113,33 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
+                            @forelse($bids as $info)
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="m-r-10">
+                                                <a class="btn btn-circle btn-danger text-white">EA</a>
+                                            </div>
+                                            <div class="">
+                                                <h4 class="m-b-0 font-16">{{$info->project->name}}</h4>
+                                            </div>
                                         </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    31-July-2020 72h 30m
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">Active</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    31-July-2020 72h 30m
-                                </td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="label label-info label-rounded">Reject</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    31-July-2020 72h 30m
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">Active</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    31-July-2020 72h 30m
-                                </td>
-                                <td>
-                                    <a href="#" data-toggle="modal" data-target="#exampleModal" class="label label-info label-rounded">Reject</a>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <label class="label label-danger">Park</label>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">${{$info->project->max_price}}</span>
+                                    </td>
+                                    <td>
+                                        {{bid_date($info->project->bid_end)}} {{bid_time($info->project->bid_end)}}
+                                    </td>
+                                    <td>
+                                        <a href="view-details.html" class="label label-success label-rounded">Active</a>
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
                             </tbody>
                         </table>
                     </div>
@@ -250,7 +181,8 @@
                                     <span class="text-muted">$250</span>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -274,7 +206,8 @@
                                     <span class="text-muted">$70</span>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -298,7 +231,8 @@
                                     <span class="text-muted">$70</span>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -322,7 +256,8 @@
                                     <span class="text-muted">$120</span>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             </tbody>
@@ -382,7 +317,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -418,7 +354,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -454,7 +391,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -490,7 +428,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             <tr>
@@ -526,7 +465,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View Details</a>
+                                    <a href="view-details.html" class="label label-success label-rounded">View
+                                        Details</a>
                                 </td>
                             </tr>
                             </tbody>

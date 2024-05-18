@@ -38,7 +38,7 @@ class ProjectController extends Controller
                 }
             }
             DB::commit();
-            return redirect()->route('owner.dashboard');
+            return redirect()->route('owner.dashboard')->with('success','Project created successfully');
 
         }catch (\Throwable $e) {
             DB::rollBack();

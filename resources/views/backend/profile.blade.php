@@ -24,7 +24,6 @@
                             </h3>
                             <div class="user-email">
                                 <span>{{$user->email}}</span>
-
                             </div>
                             <div id="round-disabled" class="rating">
                                 <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;

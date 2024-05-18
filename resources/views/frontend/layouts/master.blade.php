@@ -18,6 +18,8 @@
 
 @include('frontend.layouts.include.footer')
 @include('frontend.layouts.include.footer-script')
+@include('alert.toaster-notification')
+
 @yield('js')
 @yield('script')
 </body>
