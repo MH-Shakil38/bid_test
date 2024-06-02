@@ -11,16 +11,16 @@
                                     <div class="card-body">
                                         <!-- Comment Row -->
 
-                                        <h4 class="card-title mb-0">{{$info->title}}
+                                        <h4 class="card-title mb-0">{{$project->title ?? ''}}
                                             <a href="javascript:void">
                                                 <i class="ti-heart float-right"></i>
                                             </a>
                                         </h4>
-                                        <span class="text-muted">{{bid_date($info->created_at)}}</span>
+                                        <span class="text-muted">{{bid_date($project->created_at)}}</span>
                                         <p class="project-hours pt-3"><span>Fixed</span> - Expert level -  More than 6 months, 300+ $ - Renewed 17 minutes ago</p>
-                                        <span class="mb-3 d-block">{!! $info->details !!}</span>
+                                        <span class="mb-3 d-block">{!! $project->details !!}</span>
                                         <p class="project-images">
-                                            @forelse($info->getMedia('*') as $img)
+                                            @forelse($project->getMedia('*') as $img)
                                                 <a class="example-image-link" href="{{$img->getFullUrl()}}" data-lightbox="example-set" data-title="Click the right half of the image to move forward."><img class="example-image" src="{{$img->getFullUrl()}}" alt=""/></a>
                                             @empty
                                             @endforelse
@@ -61,9 +61,9 @@
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <p>Total Bids : {{bid_count($info->id)}}</p>
-                        <p>Bid End Date: {{bid_date($info->due_date)}}</p>
-                        <p>Bid End Time: {{bid_time($info->bid_end)}}</p>
+                        <p>Total Bids : {{bid_count($project->id)}}</p>
+                        <p>Bid End Date: {{bid_date($project->due_date)}}</p>
+                        <p>Bid End Time: {{bid_time($project->bid_end)}}</p>
                     </div>
                 </div>
             </div>

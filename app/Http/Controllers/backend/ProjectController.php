@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectStoreRequest;
 use App\Models\Category;
 use App\Models\Project;
+use App\Service\ProjectService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -55,9 +56,9 @@ class ProjectController extends Controller
         }
     }
 
-    public function viewProjectDetails($id)
+    public function viewProjectDetails($id,ProjectService $projectService)
     {
-        $data['info'] = Project::query()->where('user_id', Auth::id())->where('id',$id)->first();
+        $data['project'] = Project::query()->where('id',$id)->first();
 
         return view('backend.view-project-details')->with($data);
     }

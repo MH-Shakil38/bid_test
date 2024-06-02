@@ -1,5 +1,5 @@
 <?php
-if (!function_exists('data')) {
+if (!function_exists('bid_date')) {
     function bid_date($data){
         if ($data == null){
             return '---';
@@ -36,6 +36,10 @@ if (!function_exists('bid_count')) {
 if (!function_exists('bid_status')) {
     function bid_status(){
       $bid_status = [
+          [
+              'id' => 0,
+              'name' => "Pending",
+          ],
           [
               'id' => 1,
               'name' => "Active",
@@ -78,6 +82,21 @@ if (!function_exists('status')) {
         }else{
             return '<label class="label label-info">In Progress</label>';
         }
+    }
+}
+
+if (!function_exists('total_bid_count')) {
+    function total_bid_count($status){
+        return \Illuminate\Support\Facades\DB::table('bid_projects')->where('status', $status)->count();
+    }
+}
+
+
+if (!function_exists('string_cut')) {
+    function string_cut($details ,$line = 4){
+        $lines = explode(PHP_EOL, $details); // Split text by new lines
+        $firstSixLines = array_slice($lines, 0, 6); // Get the first six lines
+        return implode(PHP_EOL, $firstSixLines); // Combine them back into a single string
     }
 }
 

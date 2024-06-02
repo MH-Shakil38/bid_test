@@ -52,6 +52,10 @@ class User extends Authenticatable implements HasMedia
                 return 'unknown';
         }
     }
+    public function bidder_projects()
+    {
+        return $this->hasOne(Project::class,'user_id','id');
+    }
 
     protected $appends = ['full_name'];
 
