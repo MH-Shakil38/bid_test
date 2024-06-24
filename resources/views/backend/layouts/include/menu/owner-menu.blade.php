@@ -19,20 +19,32 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="{{route('owner.pending.project')}}" class="sidebar-link">
+            <a href="{{route('owner.projects', 4)}}" class="sidebar-link">
+                <i class="icon-Record"></i>
+                <span class="hide-menu">Drafts</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="{{route('owner.projects', 0)}}" class="sidebar-link">
                 <i class="icon-Record"></i>
                 <span class="hide-menu">Pending Project</span>
             </a>
         </li>
 
         <li class="sidebar-item">
-            <a href="{{route('owner.active.project')}}" class="sidebar-link">
+            <a href="{{route('owner.projects',1)}}" class="sidebar-link">
                 <i class="icon-Record"></i>
                 <span class="hide-menu">Active Project</span>
             </a>
         </li>
         <li class="sidebar-item">
-            <a href="{{route('owner.rejected.project')}}" class="sidebar-link">
+            <a href="{{route('owner.projects', 2)}}" class="sidebar-link">
+                <i class="icon-Record"></i>
+                <span class="hide-menu">Completed Project</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="{{route('owner.projects', 3)}}" class="sidebar-link">
                 <i class="icon-Record"></i>
                 <span class="hide-menu">Rejected Project</span>
             </a>

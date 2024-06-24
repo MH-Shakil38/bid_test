@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <h4>{{$title ?? 'Project List'}}</h4>
+                <h4>{{'Project List'}}</h4>
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table v-middle">
@@ -33,20 +33,16 @@
                                         <span class="text-muted">{{\Carbon\Carbon::parse($info->created_at)->format('M d, Y')}}</span>
                                     </td>
                                     <td>
-                                        @if($info->status == 1)
-                                            <label class="label label-danger">Active</label>
-                                        @elseif($info->status == 0)
-                                            <label class="label label-warning">Pending</label>
-                                        @else
-                                            <label class="label label-danger">Rejected</label>
-                                        @endif
-
+                                        {!! status($info->status) !!}
                                     </td>
                                     <td>
                                         <span class="text-muted">Min: ${{$info->min_price}}, Max: ${{$info->max_price}}</span>
                                     </td>
                                     <td>
                                         <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                        @if($info->status == 0)
+                                            <a href="{{route('projects.edit',$info->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                        @endif
                                     </td>
                                 </tr>
                             @empty

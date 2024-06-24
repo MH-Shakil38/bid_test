@@ -16,6 +16,12 @@ class OwnerController extends Controller
         }
     }
 
+    public function projects($status){
+        $data['title'] = "Active Project";
+        $data['projects'] = Project::query()->where('user_id', Auth::id())->where('status',$status)->get();
+        return view('backend.owner.project-list')->with($data);
+    }
+
     public function activeProject(){
         $data['title'] = "Active Project";
         $data['projects'] = Project::query()->where('user_id', Auth::id())->where('status',1)->get();

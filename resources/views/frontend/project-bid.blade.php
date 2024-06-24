@@ -17,7 +17,7 @@
                                         </a>
                                     </h4>
                                     <span class="text-muted">{{bid_date($info->created_at)}}</span>
-                                    <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>
+{{--                                    <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>--}}
                                     <span class="mb-3 d-block four-line-text">{!! $info->details !!} </span>
                                     <a href="{{route('project.details',$info->id)}}">View job posting </a>
                                 </div>
@@ -95,7 +95,7 @@
                                         </div>
                                         <div class="row mt-4">
                                             <div class="col-lg-12">
-                                                <p><span class="font-weight-bold">Cover Letter</span></p>
+                                                <p><span class="font-weight-bold">Files</span></p>
                                             </div>
                                             <div class="col-lg-12">
                                                 <input type="file" class="form-control" name="file"/>

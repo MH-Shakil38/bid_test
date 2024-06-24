@@ -34,4 +34,8 @@ class Project extends Model implements HasMedia
             ->fit(Fit::Contain, 300, 300)
             ->nonQueued();
     }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

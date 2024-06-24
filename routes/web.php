@@ -30,9 +30,7 @@ Route::middleware('auth')->group(function () {
     /**owner route*/
     Route::group(['prefix' => 'owner'], function () {
         Route::get('/dashboard', [OwnerController::class, 'dashboard'])->name('owner.dashboard');
-        Route::get('/active-project', [OwnerController::class, 'activeProject'])->name('owner.active.project');
-        Route::get('/pending-project', [OwnerController::class, 'pendingProject'])->name('owner.pending.project');
-        Route::get('/rejected-project', [OwnerController::class, 'rejectedProject'])->name('owner.rejected.project');
+        Route::get('/project/{status}', [OwnerController::class, 'projects'])->name('owner.projects');
     });
 
 
@@ -47,7 +45,7 @@ Route::middleware('auth')->group(function () {
 
     /**page/menu route*/
     /**bidder route*/
-    Route::group(['prefix' => 'bidder'], function () {
+    Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/total-project', [ProjectController::class, 'totalProject'])->name('total-project');
         Route::get('/total-bids', [BasicController::class, 'totalBids'])->name('total-bids');
         Route::get('/total-bidders', [BasicController::class, 'totalBidders'])->name('total-bidders');
@@ -62,7 +60,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/job-post', [HomeController::class, 'jobPost'])->name('job.post');
     Route::get('/view-project-details/{id}', [ProjectController::class, 'viewProjectDetails'])->name('view.project-details');
-    Route::resource('/projects', ProjectController::class);
+    Route::resource('projects', ProjectController::class);
     Route::post('bid-project-store', [BidController::class, 'bidProjectStore'])->name('bid-project-store');
 
 

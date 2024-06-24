@@ -24,6 +24,17 @@ if (!function_exists('user_type')) {
     }
 }
 
+if (!function_exists('user_projects')) {
+    function user_projects($uid, $status = null){
+        if ($status)
+            $jobs = \App\Models\Project::where('user_id', $uid)->where('status', $status)->count();
+        else
+            $jobs = \App\Models\Project::where('user_id', $uid)->count();
+
+        return $jobs ?? 0;
+    }
+}
+
 
 if (!function_exists('bid_count')) {
     function bid_count($project_id){
@@ -46,21 +57,16 @@ if (!function_exists('bid_status')) {
           ],
           [
               'id' => 2,
-              'name' => "Draft",
-          ],
-          [
-              'id' => 3,
               'name' => "Complete",
           ],
           [
-              'id' => 4,
+              'id' => 3,
               'name' => "Reject",
           ],
-
           [
-              'id' => 5,
-              'name' => "In Progress",
-          ],
+              'id' => 4,
+              'name' => "Draft",
+          ]
 
       ];
        return $bid_status;
@@ -69,18 +75,18 @@ if (!function_exists('bid_status')) {
 
 if (!function_exists('status')) {
     function status($status){
-        if ($status == 1){
-            return '<label class="label label-danger">Active</label>';
-        }elseif ($status == 2){
-            return '<label class="label label-success">Draft</label>';
-        }elseif ($status == 3){
-            return '<label class="label label-info">Complete</label>';
+        if ($status == 0){
+            return '<label class="label warning">Pending</label>';
+        }elseif ($status == 1){
+            return '<label class="label label-success">Active</label>';
         }elseif ($status == 4){
-            return '<label class="label label-warning">Reject</label>';
-        }elseif ($status == 5){
-            return '<label class="label label-info">In Progress</label>';
+            return '<label class="label label-secondary">Draft</label>';
+        }elseif ($status == 2){
+            return '<label class="label label-primary">Complete</label>';
+        }elseif ($status == 3){
+            return '<label class="label label-danger">Reject</label>';
         }else{
-            return '<label class="label label-info">In Progress</label>';
+            return '<label class="label label-info">Under Progress</label>';
         }
     }
 }

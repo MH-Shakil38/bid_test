@@ -33,14 +33,7 @@
                                         <span class="text-muted">{{\Carbon\Carbon::parse($info->created_at)->format('M d, Y')}}</span>
                                     </td>
                                     <td>
-                                        @if($info->status == 1)
-                                            <label class="label label-danger">Active</label>
-                                        @elseif($info->status == 0)
-                                            <label class="label label-warning">Pending</label>
-                                        @else
-                                            <label class="label label-danger">Rejected</label>
-                                        @endif
-
+                                        {!! status($info->status) !!}
                                     </td>
                                     <td>
                                         <span class="text-muted">Min: ${{$info->min_price}}, Max: ${{$info->max_price}}</span>

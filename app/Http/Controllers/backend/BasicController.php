@@ -21,7 +21,7 @@ class BasicController extends Controller
         if (user_type() == 1){
             return view('backend.dashboard')->with($data);
         }elseif (user_type() == 2){
-            return view('backend.bidder.dashboard');
+            return view('backend.bidder.dashboard')->with($data);
         }elseif (user_type() == 3){
             $data['projects'] = Project::query()->where('user_id', Auth::id())->get();
             return view('backend.owner.dashboard')->with($data);

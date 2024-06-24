@@ -9,24 +9,25 @@
                             <div class="form-group row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label class="control-label">Search by Name</label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name">
+                                        <label class="control-label">Search by title</label>
+                                        <input type="text" class="form-control" name="title" id="title">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Search by Date</label>
-                                        <input type="date" class="form-control">
+                                        <input type="date" class="form-control" name="date">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Search by Status</label>
-                                        <select class="form-control custom-select">
-                                            <option>Active</option>
-                                            <option>Draft</option>
-                                            <option>Complete</option>
-                                            <option>Reject</option>
+                                        <select class="form-control custom-select" name="status">
+                                            <option disabled selected>All</option>
+                                            @forelse(bid_status() as $bid)
+                                                <option value="{{$bid['id']}}">{{$bid['name']}}</option>
+                                            @empty
+                                            @endforelse
                                         </select>
                                     </div>
                                 </div>
@@ -74,7 +75,10 @@
                                         {{\Carbon\Carbon::parse($info->bid_end)->format('d-M-Y h\h :i\m a')}}
                                     </td>
                                     <td>
-                                        <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">Active</a>
+                                        <a href="{{route('view.project-details',$info->id)}}">
+                                            {!! status($info->status)  !!}
+                                        </a>
+                                        <a href="{{route('projects.edit',$info->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @empty
