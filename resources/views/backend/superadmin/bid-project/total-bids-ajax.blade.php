@@ -16,8 +16,8 @@
                 <div class="bid-option">
                     <span class="dots">...</span>
                     <ul>
-                        <li><a href="javascript:void()">Edit</a></li>
-                        <li><a href="javascript:void()">Delete</a></li>
+                        <li><a href="{{route('view.project-details',$project->id)}}">Details</a></li>
+{{--                        <li><a href="javascript:void()">Delete</a></li>--}}
                     </ul>
                 </div>
                 <div class="d-flex justify-content-between pt-3">

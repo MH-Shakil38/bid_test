@@ -76,17 +76,17 @@ if (!function_exists('bid_status')) {
 if (!function_exists('status')) {
     function status($status){
         if ($status == 0){
-            return '<label class="label warning">Pending</label>';
+            return '<label class="badge bg-warning">Pending</label>';
         }elseif ($status == 1){
-            return '<label class="label label-success">Active</label>';
+            return '<label class="badge bg--success">Active</label>';
         }elseif ($status == 4){
-            return '<label class="label label-secondary">Draft</label>';
+            return '<label class="badge bg--secondary">Draft</label>';
         }elseif ($status == 2){
-            return '<label class="label label-primary">Complete</label>';
+            return '<label class="badge bg--primary">Complete</label>';
         }elseif ($status == 3){
-            return '<label class="label label-danger">Reject</label>';
+            return '<label class="badge bg--danger">Reject</label>';
         }else{
-            return '<label class="label label-info">Under Progress</label>';
+            return '<label class="badge bg--info">Under Progress</label>';
         }
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectStoreRequest;
+use App\Models\BidProject;
 use App\Models\Category;
 use App\Models\Project;
 use App\Service\ProjectService;
@@ -103,7 +104,11 @@ class ProjectController extends Controller
 
     public function viewProjectDetails($id,ProjectService $projectService)
     {
+
         $data['project'] = Project::query()->where('id',$id)->first();
+        $data['activeBid'] = BidProject::query()->where('project_id',$data['project']->id)->where('status',1)->latest()->first();
+        $data['project']->bids = BidProject::query()->where('project_id',$data['project']->id)->get();
+
 
         return view('backend.view-project-details')->with($data);
     }

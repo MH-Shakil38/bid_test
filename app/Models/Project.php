@@ -38,4 +38,9 @@ class Project extends Model implements HasMedia
     public function user(){
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    public function bidProject()
+    {
+        $this->hasMany(BidProject::class, 'project_id');
+    }
 }

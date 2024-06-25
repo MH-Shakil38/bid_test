@@ -51,3 +51,10 @@
         </li>
     </ul>
 </li>
+
+<li class="sidebar-item">
+    <a class="sidebar-link waves-effect waves-dark" href="{{route('total-bids')}}" aria-expanded="false">
+        <i class="icon-Car-Wheel"></i>
+        <span class="hide-menu">Total Bid's</span>
+    </a>
+</li>

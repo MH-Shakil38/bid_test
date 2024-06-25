@@ -46,7 +46,7 @@
                                     </span>
                         </div>
                         <div>
-                            <a href="javascript:void()">Total Bidder</a>
+                            <a href="{{route('total-bidders')}}">Total Bidder</a>
                         </div>
                         <div class="ml-auto">
                             <h2 class="m-b-0 font-light">{{$totalBidder}}</h2>
@@ -65,7 +65,7 @@
                                     </span>
                         </div>
                         <div>
-                            <a href="javascript:void()">Total Home Owners</a>
+                            <a href="{{route('home-owners')}}">Total Home Owners</a>
                         </div>
                         <div class="ml-auto">
                             <h2 class="m-b-0 font-light">{{$totalHomeowner}}</h2>
@@ -84,7 +84,7 @@
                                     </span>
                         </div>
                         <div>
-                            <a href="total-bids.html">Total Bid's</a>
+                            <a href="{{route('total-bids')}}">Total Bid's</a>
                         </div>
                         <div class="ml-auto">
                             <h2 class="m-b-0 font-light">{{$totalBid}}</h2>
@@ -103,7 +103,7 @@
                                     </span>
                         </div>
                         <div>
-                            <a href="monthly-weekly-incom.html">Total Earning $5000 (dummy)</a>
+                            <a href="#">Total Earning $5000 (dummy)</a>
                         </div>
                     </div>
                 </div>

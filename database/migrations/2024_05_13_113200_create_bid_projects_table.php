@@ -17,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id')->index('project_id_foreign');
             $table->longText('cover_letter')->nullable();
             $table->string('file')->nullable();
-            $table->unsignedTinyInteger('status')->nullable();
+            $table->unsignedTinyInteger('status')->nullable()->comment('0-pending,1-accept,2-reject');
             $table->boolean('interviewing')->default(0);
             $table->boolean('invite_sent')->default(0);
             $table->unsignedTinyInteger('rating')->nullable();

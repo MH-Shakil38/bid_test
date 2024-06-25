@@ -27,6 +27,8 @@ Route::get('/dashboard',[BasicController::class,'dashboard'])->middleware(['auth
 
 Route::middleware('auth')->group(function () {
 
+    Route::get('change-status', [HomeController::class, 'changeStatus'])->name('change.status');
+
     /**owner route*/
     Route::group(['prefix' => 'owner'], function () {
         Route::get('/dashboard', [OwnerController::class, 'dashboard'])->name('owner.dashboard');

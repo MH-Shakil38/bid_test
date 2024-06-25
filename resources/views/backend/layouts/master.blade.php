@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+    {{--sweet alert--}}
+    <!-- Include SweetAlert CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
     <style>
         .no-record{
             position: absolute;
@@ -103,7 +107,60 @@
 @include('backend.layouts.include.footer-script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+{{--sweet alert footer script--}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 @yield('js')
+<script>
+    function changeStatus(id, model,value = null) {
+        var checkbox = document.getElementById("switch" + id);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to change the status?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, change it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Send AJAX request
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ route('change.status') }}',
+                    data: {
+                        id: id,
+                        model: model,
+                        status: value,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function (response) {
+                        // Handle success response
+                        console.log(response);
+                        // Show success message using SweetAlert
+                        Swal.fire({
+                            title: "Status Updated!",
+                            text: response.success,
+                            icon: "success",
+                            confirmButtonColor: "#3085d6",
+                            confirmButtonText: "OK"
+                        });
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000);
+                    },
+                    error: function (xhr, status, error) {
+                        // Handle error response
+                        console.error(xhr.responseText);
+                    }
+                });
+            } else {
+                checkbox.checked = !checkbox.checked;
+            }
+        });
+    }
+</script>
 
 
 <script>

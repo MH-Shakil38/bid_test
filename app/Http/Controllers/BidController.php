@@ -14,6 +14,7 @@ class BidController extends Controller
             DB::beginTransaction();
             $data = $request->all();
             $data['user_id'] = Auth::id();
+            $data['status'] = 0;
             BidProject::query()->create($data);
             DB::commit();
             return redirect()->back()->with('success','Bid Proposal has been Send');

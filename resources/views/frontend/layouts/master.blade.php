@@ -22,5 +22,6 @@
 
 @yield('js')
 @yield('script')
+
 </body>
 </html>
