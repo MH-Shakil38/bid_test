@@ -31,7 +31,7 @@
                 <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>
 
                 <span class="mb-3 d-block four-line-text">{!! substr( $project->details , 0 ,400) !!}
-                                        ....<a href="{{route('view.project-details',$project->id)}}">View Details </a>
+                                        ....<a href="{{route('view.project-details',$project->id)}}">read more </a>
                                       </span>
             </div>
         </div>

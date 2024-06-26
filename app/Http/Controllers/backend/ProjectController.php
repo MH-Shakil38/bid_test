@@ -14,19 +14,12 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
-    public function totalProject(Request $request){
-        $query= Project::query();
-        if($request->has('title') && $request->title!= null){
-            $query = $query->where('title', 'like', $request->title.'%');
+    public function totalProject(Request $request,ProjectService $projectService){
+        $data['projects'] = $projectService->projectQuery();
+        if ($request->ajax() && $request->type == 'search') {
+            $view = view('backend.project.search_ajax_table')->with($data)->render();
+            return response()->json($view);
         }
-        if($request->has('date') && $request->date!= null){
-            $query = $query->where('due_date', date('Y-m-d',$request->date));
-        }
-        if($request->has('status') && $request->status!= null){
-            $query = $query->where('status', $request->status);
-        }
-
-        $data['projects'] = $query->get();
         return view('backend.superadmin.total-project')->with($data);
     }
 

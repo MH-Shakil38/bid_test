@@ -9,23 +9,22 @@ class ProjectService
     public function projects($user_type = null)
     {
         $request = request();
-        if (user_type() == 3){
-            if ($user_type == null && !isset($request->status)) {
-                return Project::query()->where('user_id',auth()->user()->id)->get();
-            }elseif (isset($request->status)){
-                return Project::query()->where('status', $request->status)->where('user_id',auth()->user()->id)->get();
-            }else{
-                return Project::query()->where('user_type', $user_type)->where('user_id',auth()->user()->id)->get();
-            }
-        }else{
-            if ($user_type == null && !isset($request->status)) {
-                return Project::query()->get();
-            }elseif (isset($request->status)){
-                return Project::query()->where('status', $request->status)->get();
-            }else{
-                return Project::query()->where('user_type', $user_type)->get();
-            }
-        }
+        $query = Project::query();
+        $query = user_type() == 3 ? $query->where('user_id',auth()->user()->id) : $query;
+        isset($request->title) ?  $query->where('title', 'LIKE', '%' . $request->title . '%') : $query;
+        isset($request->date) ?  $query->where('created_at', 'like', '%' . $request->date . '%') : $query;
+        isset($request->status) &&  $request->status != 'All'?  $query->where('status', $request->status) : $query;
+        return $query->get();
+    }
 
+    public function projectQuery()
+    {
+        $request = request();
+        $query = Project::query();
+        $query = user_type() == 3 ? $query->where('user_id',auth()->user()->id) : $query;
+        isset($request->title) ?  $query->where('title', 'LIKE', '%' . $request->title . '%') : $query;
+        isset($request->date) ?  $query->where('created_at', 'like', '%' . $request->date . '%') : $query;
+        isset($request->status) &&  $request->status != 'All'?  $query->where('status', $request->status) : $query;
+        return $query->get();
     }
 }

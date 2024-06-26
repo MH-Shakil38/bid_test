@@ -91,6 +91,18 @@ if (!function_exists('status')) {
     }
 }
 
+if (!function_exists('changeStatusButton')) {
+    function changeStatusButton($id,$status){
+        if ($status == 0){
+            return '<button class="btn btn-info float-right" onclick="changeStatus('.$id.',"BidProject",1)"> Pending.. </button>';
+        }elseif ($status == 1){
+            return '<button class="btn btn-info float-success" onclick="changeStatus('.$id.',"BidProject",1)">Active</button>';
+        }elseif ($status == 2){
+            return '<button class="btn btn-info float-danger" onclick="changeStatus('.$id.',"BidProject",1)"Reject</label>';
+        }
+    }
+}
+
 if (!function_exists('total_bid_count')) {
     function total_bid_count($status){
         return \Illuminate\Support\Facades\DB::table('bid_projects')->where('status', $status)->count();

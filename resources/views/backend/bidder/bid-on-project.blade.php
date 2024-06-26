@@ -87,7 +87,7 @@
                                         <a href="#">2</a>
                                     </td>
                                     <td>
-                                        <a target="_blank" href="{{route('project.details',$info->project_id)}}" class="label label-success label-rounded">View Details</a>
+                                        <a target="_blank" href="{{route('project.details',$info->project_id)}}" class="label label-success label-rounded">read more</a>
                                     </td>
                                     <td>
                                         <a href="#">Edit</a>

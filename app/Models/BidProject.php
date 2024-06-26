@@ -30,4 +30,9 @@ class BidProject extends Model
     public function project(){
         return $this->belongsTo(Project::class);
     }
+
+    static function findById($id)
+    {
+        return self::query()->findOrFail($id);
+    }
 }

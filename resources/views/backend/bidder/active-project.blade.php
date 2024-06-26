@@ -74,7 +74,7 @@
                                         <span class="text-muted">{{$info->max_price}}</span>
                                     </td>
                                     <td>
-                                        <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                        <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">read more</a>
                                     </td>
                                 </tr>
                             @empty

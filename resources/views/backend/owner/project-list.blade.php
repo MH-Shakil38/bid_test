@@ -39,7 +39,7 @@
                                         <span class="text-muted">Min: ${{$info->min_price}}, Max: ${{$info->max_price}}</span>
                                     </td>
                                     <td>
-                                        <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">View Details</a>
+                                        <a href="{{route('view.project-details',$info->id)}}" class="label label-success label-rounded">read more</a>
                                         @if($info->status == 0)
                                             <a href="{{route('projects.edit',$info->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                         @endif

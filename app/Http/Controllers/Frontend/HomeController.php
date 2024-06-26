@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\BidProject;
 use App\Models\Category;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -20,8 +21,12 @@ class HomeController extends Controller
         $row = $model::findOrFail($request->id);
         $row->update(['status' => $request->status]);
         if($request->model == 'BidProject'){
-            Project::query()->findOrFail($row->project_id)->update(['status' => $request->status]);
+           $bid = BidProject::findById($request->id);
+           $bids = BidProject::query()->where('project_id',$bid->project_id);
+           $bids->update(['status'=>2]);
+            BidProject::query()->findOrFail($request->id)->update(['status'=>1]);
         }
+
         return response()->json(['success' => 'Status Successfully Updated']);
 
     }

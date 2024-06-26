@@ -16,13 +16,13 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Search by Date</label>
-                                        <input type="date" class="form-control" name="date">
+                                        <input type="date" class="form-control" name="date" id="date">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="control-label">Search by Status</label>
-                                        <select class="form-control custom-select" name="status">
+                                        <select class="form-control custom-select" name="status" id="status">
                                             <option disabled selected>All</option>
                                             @forelse(bid_status() as $bid)
                                                 <option value="{{$bid['id']}}">{{$bid['name']}}</option>
@@ -52,7 +52,7 @@
                                 <th class="border-top-0">Status</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="append-table">
                             @forelse($projects as $info)
                                 <tr>
                                     <td>
@@ -91,4 +91,38 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function ajaxLoader(){
+            return `<h2 class="text-center loader no-record"><div class="spinner-border text-success"></div> Data Fetching.....</h2>`;
+        }
+        $(document).ready(function() {
+            function fetchProjects() {
+                $('.append-table').html(ajaxLoader());
+                var title = $('#title').val();
+                var date = $('#date').val();
+                var status = $('#status').val();
+                var type = 'search';
+
+                $.ajax({
+                    url: '{{ route("total-project") }}',
+                    type: 'GET',
+                    data: {
+                        title   : title,
+                        date    : date,
+                        status  : status,
+                        type    : type,
+                    },
+                    success: function(data) {
+                        $('.append-table').html(data);
+                    }
+                });
+            }
+
+            $('#title').on('keyup', fetchProjects);
+            $('#date').on('change', fetchProjects);
+            $('#status').on('change', fetchProjects);
+        });
+    </script>
+
 @endsection

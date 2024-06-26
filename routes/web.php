@@ -28,6 +28,7 @@ Route::get('/dashboard',[BasicController::class,'dashboard'])->middleware(['auth
 Route::middleware('auth')->group(function () {
 
     Route::get('change-status', [HomeController::class, 'changeStatus'])->name('change.status');
+    Route::get('bid-details/{id}', [BidController::class, 'bidDetails'])->name('bid.details');
 
     /**owner route*/
     Route::group(['prefix' => 'owner'], function () {
@@ -39,9 +40,6 @@ Route::middleware('auth')->group(function () {
     /**bidder route*/
     Route::group(['prefix' => 'bidder'], function () {
         Route::get('/dashboard', [BidderController::class, 'dashboard'])->name('bidder.dashboard');
-        Route::get('/bid-on-project', [BidderController::class, 'bidOnProject'])->name('bidder.bid-on-project');
-        Route::get('/active-project', [BidderController::class, 'activeProject'])->name('bidder.active-project');
-        Route::get('/complete-project', [BidderController::class, 'completeProject'])->name('bidder.complete-project');
     });
 
 

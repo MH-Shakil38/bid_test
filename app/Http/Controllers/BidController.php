@@ -23,4 +23,10 @@ class BidController extends Controller
             dd($e->getMessage());
         }
     }
+
+    public function bidDetails($bidProjectId)
+    {
+        $data['bid'] = BidProject::findById($bidProjectId);
+        return view('backend.bid.bid-details')->with($data);
+    }
 }
