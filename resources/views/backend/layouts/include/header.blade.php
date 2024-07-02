@@ -43,65 +43,65 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ti-bell font-20"></i>
+{{--                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                        <i class="ti-bell font-20"></i>--}}
 
-                    </a>
-                    <div class="dropdown-menu mailbox animated bounceInDown">
-                                <span class="with-arrow">
-                                    <span class="bg-primary"></span>
-                                </span>
-                        <ul class="list-style-none">
-                            <li>
-                                <div class="drop-title bg-primary text-white">
-                                    <h4 class="m-b-0 m-t-5">4 New</h4>
-                                    <span class="font-light">Notifications</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="message-center notifications">
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">Michael Jorden</h5>
-                                            <span class="mail-desc">Payement Recieved</span>
-                                            <span class="time">9:30 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">James Anderson</h5>
-                                            <span class="mail-desc">Posted new project</span>
-                                            <span class="time">9:10 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">Johnathan Doeting</h5>
-                                            <span class="mail-desc">You can customize this template as you want</span>
-                                            <span class="time">9:08 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">James Anderson</h5>
-                                            <span class="mail-desc">Just see the my admin!</span>
-                                            <span class="time">9:02 AM</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="nav-link text-center m-b-5" href="javascript:void(0);">
-                                    <strong>Check all notifications</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+{{--                    </a>--}}
+{{--                    <div class="dropdown-menu mailbox animated bounceInDown">--}}
+{{--                                <span class="with-arrow">--}}
+{{--                                    <span class="bg-primary"></span>--}}
+{{--                                </span>--}}
+{{--                        <ul class="list-style-none">--}}
+{{--                            <li>--}}
+{{--                                <div class="drop-title bg-primary text-white">--}}
+{{--                                    <h4 class="m-b-0 m-t-5">4 New</h4>--}}
+{{--                                    <span class="font-light">Notifications</span>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <div class="message-center notifications">--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">Michael Jorden</h5>--}}
+{{--                                            <span class="mail-desc">Payement Recieved</span>--}}
+{{--                                            <span class="time">9:30 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">James Anderson</h5>--}}
+{{--                                            <span class="mail-desc">Posted new project</span>--}}
+{{--                                            <span class="time">9:10 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">Johnathan Doeting</h5>--}}
+{{--                                            <span class="mail-desc">You can customize this template as you want</span>--}}
+{{--                                            <span class="time">9:08 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">James Anderson</h5>--}}
+{{--                                            <span class="mail-desc">Just see the my admin!</span>--}}
+{{--                                            <span class="time">9:02 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="nav-link text-center m-b-5" href="javascript:void(0);">--}}
+{{--                                    <strong>Check all notifications</strong>--}}
+{{--                                    <i class="fa fa-angle-right"></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                 </li>
                 <!-- ============================================================== -->
                 <!-- End Comment -->
@@ -109,83 +109,83 @@
                 <!-- ============================================================== -->
                 <!-- Messages -->
                 <!-- ============================================================== -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="font-20 ti-email"></i>
+{{--                <li class="nav-item dropdown">--}}
+{{--                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                        <i class="font-20 ti-email"></i>--}}
 
-                    </a>
-                    <div class="dropdown-menu mailbox animated bounceInDown" aria-labelledby="2">
-                                <span class="with-arrow">
-                                    <span class="bg-danger"></span>
-                                </span>
-                        <ul class="list-style-none">
-                            <li>
-                                <div class="drop-title bg-danger text-white">
-                                    <h4 class="m-b-0 m-t-5">4 New</h4>
-                                    <span class="font-light">Messages</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="message-center message-body">
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img">
-                                                    <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" alt="users" class="rounded-circle">
-                                                    <span class="profile-status online pull-right"></span>
-                                                </span>
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">Johnathan Doeting</h5>
-                                            <span class="mail-desc">Looking for php dev</span>
-                                            <span class="time">9:30 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img">
-                                                    <img src="{{asset('/')}}/assets/images/users/2.jpg" alt="user" class="rounded-circle">
-                                                    <span class="profile-status busy pull-right"></span>
-                                                </span>
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">Monster Admin</h5>
-                                            <span class="mail-desc">Lorem Ipsum is simply dummy text</span>
-                                            <span class="time">7:10 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img">
-                                                    <img src="{{asset('/')}}/assets/images/users/3.jpg" alt="user" class="rounded-circle">
-                                                    <span class="profile-status away pull-right"></span>
-                                                </span>
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">Michael Jorden</h5>
-                                            <span class="mail-desc">I am frontend developer!</span>
-                                            <span class="time">9:08 AM</span>
-                                        </div>
-                                    </a>
-                                    <!-- Message -->
-                                    <a href="javascript:void(0)" class="message-item">
-                                                <span class="user-img">
-                                                    <img src="{{asset('/')}}/assets/images/users/4.jpg" alt="user" class="rounded-circle">
-                                                    <span class="profile-status offline pull-right"></span>
-                                                </span>
-                                        <div class="mail-contnet">
-                                            <h5 class="message-title">James Anderson</h5>
-                                            <span class="mail-desc">Looking for QA</span>
-                                            <span class="time">10:15 AM</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="nav-link text-center link" href="javascript:void(0);">
-                                    <b>See all e-Mails</b>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+{{--                    </a>--}}
+{{--                    <div class="dropdown-menu mailbox animated bounceInDown" aria-labelledby="2">--}}
+{{--                                <span class="with-arrow">--}}
+{{--                                    <span class="bg-danger"></span>--}}
+{{--                                </span>--}}
+{{--                        <ul class="list-style-none">--}}
+{{--                            <li>--}}
+{{--                                <div class="drop-title bg-danger text-white">--}}
+{{--                                    <h4 class="m-b-0 m-t-5">4 New</h4>--}}
+{{--                                    <span class="font-light">Messages</span>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <div class="message-center message-body">--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                                <span class="user-img">--}}
+{{--                                                    <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}" alt="users" class="rounded-circle">--}}
+{{--                                                    <span class="profile-status online pull-right"></span>--}}
+{{--                                                </span>--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">Johnathan Doeting</h5>--}}
+{{--                                            <span class="mail-desc">Looking for php dev</span>--}}
+{{--                                            <span class="time">9:30 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                                <span class="user-img">--}}
+{{--                                                    <img src="{{asset('/')}}/assets/images/users/2.jpg" alt="user" class="rounded-circle">--}}
+{{--                                                    <span class="profile-status busy pull-right"></span>--}}
+{{--                                                </span>--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">Monster Admin</h5>--}}
+{{--                                            <span class="mail-desc">Lorem Ipsum is simply dummy text</span>--}}
+{{--                                            <span class="time">7:10 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                                <span class="user-img">--}}
+{{--                                                    <img src="{{asset('/')}}/assets/images/users/3.jpg" alt="user" class="rounded-circle">--}}
+{{--                                                    <span class="profile-status away pull-right"></span>--}}
+{{--                                                </span>--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">Michael Jorden</h5>--}}
+{{--                                            <span class="mail-desc">I am frontend developer!</span>--}}
+{{--                                            <span class="time">9:08 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                    <!-- Message -->--}}
+{{--                                    <a href="javascript:void(0)" class="message-item">--}}
+{{--                                                <span class="user-img">--}}
+{{--                                                    <img src="{{asset('/')}}/assets/images/users/4.jpg" alt="user" class="rounded-circle">--}}
+{{--                                                    <span class="profile-status offline pull-right"></span>--}}
+{{--                                                </span>--}}
+{{--                                        <div class="mail-contnet">--}}
+{{--                                            <h5 class="message-title">James Anderson</h5>--}}
+{{--                                            <span class="mail-desc">Looking for QA</span>--}}
+{{--                                            <span class="time">10:15 AM</span>--}}
+{{--                                        </div>--}}
+{{--                                    </a>--}}
+{{--                                </div>--}}
+{{--                            </li>--}}
+{{--                            <li>--}}
+{{--                                <a class="nav-link text-center link" href="javascript:void(0);">--}}
+{{--                                    <b>See all e-Mails</b>--}}
+{{--                                    <i class="fa fa-angle-right"></i>--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </li>--}}
                 <!-- ============================================================== -->
                 <!-- End Messages -->
                 <!-- ============================================================== -->
@@ -236,7 +236,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">
-                        <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" height="30px" alt="{{auth()->user()->full_name}}" class="rounded-circle" width="31">
+                        <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}" height="30px" alt="{{auth()->user()->full_name}}" class="rounded-circle" width="31">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <span class="with-arrow">
@@ -244,7 +244,7 @@
                                 </span>
                         <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
                             <div class="">
-                                <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" height="60px" alt="user" class="img-circle" width="60">
+                                <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}" height="60px" alt="user" class="img-circle" width="60">
                             </div>
                             <div class="m-l-10">
                                 <h4 class="m-b-0">{{auth()->user()->full_name}}</h4>

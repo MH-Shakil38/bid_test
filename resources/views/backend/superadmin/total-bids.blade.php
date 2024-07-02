@@ -14,8 +14,8 @@
                             @endforelse
                         </select>
                     </div>
-                    <span class="total-bid-lable">Total Bid ({{count($projects)}})</span>
-                    <a class="download-csv-btn" href="javascript:void()">Download CSV</a>
+                    <span class="total-bid-label">Total Bid ({{total_bid_count()}})</span>
+{{--                    <a class="download-csv-btn" href="javascript:void()">Download CSV</a>--}}
                 </div>
 
                 <h4>Active Bids</h4>

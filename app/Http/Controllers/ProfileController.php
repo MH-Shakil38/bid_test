@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,11 @@ class ProfileController extends Controller
      */
     public function profile(Request $request): View
     {
-        $data['user']  = Auth::user();
+        if ($request->id){
+            $data['user'] = User::query()->findOrFail($request->id);
+        }else{
+            $data['user']  = Auth::user();
+        }
         return view('backend.profile')->with($data);
     }
 

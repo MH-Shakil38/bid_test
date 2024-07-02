@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\DB;
 
 class ProjectController extends Controller
 {
-    public function totalProject(Request $request,ProjectService $projectService){
-        $data['projects'] = $projectService->projectQuery();
+    public function index(Request $request,ProjectService $projectService){
+        $data['projects'] = $projectService->projects();
         if ($request->ajax() && $request->type == 'search') {
             $view = view('backend.project.search_ajax_table')->with($data)->render();
             return response()->json($view);
@@ -35,7 +35,8 @@ class ProjectController extends Controller
             DB::beginTransaction();
             $data = $request->all();
             $data['user_id'] = Auth::id();
-            $data['status'] = $request->submit;
+            $data['status'] = 0;
+
              $project = Project::query()->create($data);
             if ($request->hasFile('images')) {
                 foreach ($request->file('images', []) as $file) {

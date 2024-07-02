@@ -49,15 +49,18 @@
                                     <!-- Comment Row -->
                                     <h4 class="card-title mb-2">{{ $activeBid->user->full_name ?? ''}}
                                         <div class="bid-option">
-                                            <span class="badge bg-success">Accept</span>
-{{--                                            <ul>--}}
-{{--                                                <li><a href="javascript:void()">Accept</a></li>--}}
-{{--                                                <li><a href="javascript:void()">Delete</a></li>--}}
-{{--                                            </ul>--}}
+                                            @if($activeBid->status == 1)
+                                                <button class="btn btn-info float-right" onclick="changeStatus({{$activeBid->id}},'BidProject',2)"> Submit </button>
+                                            @elseif($activeBid->status == 2)
+                                                <button class="btn btn-success float-right"> Complete </button>
+                                            @elseif($activeBid->status == 3)
+                                                <button class="btn btn-light-info disabled float-right"> Completed </button>
+                                            @elseif($activeBid->status == 4)
+                                                <button class="btn btn-danger float-right"> Rejected.. </button>
+                                            @endif
                                         </div>
                                     </h4>
                                     <span class="text-muted">{{bid_date($activeBid->created_at)}}</span>
-                                    {{--                                        <p class="project-hours pt-3"><span>Fixed</span> - Expert level -  More than 6 months, 300+ $ - Renewed 17 minutes ago</p>--}}
                                     <span class="mb-3 d-block">{!! $activeBid->cover_letter !!}</span>
 
 
@@ -70,41 +73,25 @@
             <h4>All Bid's</h4>
             <div class="row">
                 @forelse($project->bids as $bid)
+                    @if($bid->status != 1)
                     <div class="col-md-6">
                     <div class="card">
                         <div class="card-body">
                             <!-- Comment Row -->
-                            @if($bid->status == 1)
-                            <h4 class="card-title mb-2">{{ $bid->user->full_name ?? ''}}
-                                <div class="bid-option">
-                                    <span class="badge bg-success">Accepted Bid</span>
-                                </div>
-                            </h4>
-                            @elseif($bid->status == 2)
-                                <h4 class="card-title mb-2">{{ $activeBid->user->full_name ?? ''}}
-                                    <div class="bid-option">
-                                        <span class="badge bg-danger">Rejected</span>
-                                    </div>
-                                </h4>
-                            @else
-                                <h4 class="card-title mb-2">{{ $bid->user->full_name ?? ''}}
-                                <div class="bid-option">
-                                    <span class="dots">...</span>
-                                    <ul>
-                                        <li><a class="btn btn-light-info" onclick="changeStatus({{$bid->id}},'{{'BidProject' ?? ''}}',1)">Accept</a></li>
-                                        <li><a class="btn btn-light-danger" onclick="changeStatus({{$bid->id}},'{{'BidProject' ?? ''}}',2)">Reject</a></li>
-                                    </ul>
-                                </div>
+                            @if($bid->status == 0)
+                                <button class="btn btn-info float-right" onclick="changeStatus({{$bid->id}},'BidProject',1)"> Accept </button>
+                            @elseif($bid->status == 4)
+                                <button class="btn btn-success float-right"> Rejected </button>
                             @endif
 
                             <span class="text-muted">{{bid_date($bid->created_at)}}</span>
-                            {{--                                        <p class="project-hours pt-3"><span>Fixed</span> - Expert level -  More than 6 months, 300+ $ - Renewed 17 minutes ago</p>--}}
                             <span class="mb-3 d-block">{!! $bid->cover_letter !!}</span>
                             <a href="{{route('bid.details',$bid->id)}}" class="text-decoration-none float-right" style="color: #0b0b0b">Details...</a>
 
                         </div>
                     </div>
                 </div>
+                    @endif
                 @empty
                     <div class="">
                     <hr>

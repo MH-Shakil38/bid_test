@@ -24,7 +24,9 @@ class Project extends Model implements HasMedia
         'bid_end',
         'details',
         'status',
-        'contract'
+        'contract',
+        'duration',
+        'bid_status'
     ];
 
     public function registerMediaConversions(Media $media = null): void

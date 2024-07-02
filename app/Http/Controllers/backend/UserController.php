@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -24,17 +25,28 @@ class UserController extends Controller
             'mobile' => ['required', 'string', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-        $user = User::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'mobile' => $request->mobile,
-            'country' => $request->country,
-            'address' => $request->address,
-            'user_type' => $request->user_type,
-            'password' => Hash::make($request->password),
-        ]);
-        return redirect()->back()->with('success', 'User created successfully');
+        try {
+            DB::beginTransaction();
+
+            $user = User::query()->create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'mobile' => $request->mobile,
+                'country' => $request->country,
+                'address' => $request->address,
+                'user_type' => $request->user_type,
+                'details' => $request->details,
+                'password' => Hash::make($request->password),
+            ]);
+            DB::commit();
+            return redirect()->back()->with('success', 'User created successfully');
+
+        }catch (\Throwable $e){
+            DB::rollBack();
+            dd($e->getMessage(), $e->getCode(), $e->getFile());
+        }
+
     }
 
     public function edit(User $user)

@@ -103,7 +103,7 @@
                                     </span>
                         </div>
                         <div>
-                            <a href="#">Total Earning $5000 (dummy)</a>
+                            <a href="#">Total Earning ${{total_earning()}}</a>
                         </div>
                     </div>
                 </div>

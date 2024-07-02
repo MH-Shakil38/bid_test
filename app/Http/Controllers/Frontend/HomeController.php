@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\BidProject;
 use App\Models\Category;
 use App\Models\Project;
+use App\Service\BidService;
+use App\Service\ProjectService;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,16 +17,14 @@ class HomeController extends Controller
         return view('frontend.home');
     }
 
-    public function changeStatus(Request $request)
+    public function changeStatus(Request $request,BidService $bidService)
     {
-        $model = "\App\Models\\" . $request->model;
-        $row = $model::findOrFail($request->id);
-        $row->update(['status' => $request->status]);
-        if($request->model == 'BidProject'){
-           $bid = BidProject::findById($request->id);
-           $bids = BidProject::query()->where('project_id',$bid->project_id);
-           $bids->update(['status'=>2]);
-            BidProject::query()->findOrFail($request->id)->update(['status'=>1]);
+        if ($request->model == 'BidProject') {
+            $bidService->changeBidStatus($request->id,$request->status);
+        }else{
+            $model = "\App\Models\\" . $request->model;
+            $row = $model::findOrFail($request->id);
+            $row->update(['status' => $request->status]);
         }
 
         return response()->json(['success' => 'Status Successfully Updated']);
@@ -59,11 +59,9 @@ class HomeController extends Controller
         return view('frontend.project-bid', compact('info'));
     }
 
-    public function findProject(Request $request)
+    public function findProject(Request $request, ProjectService $projectService,)
     {
-        $data['projects'] = Project::query()
-            ->where('title', 'like', '%' . $request->title . '%')
-            ->get();
+        $data['projects'] = Project::query()->where('status',0)->get();
         return view('frontend.listing')->with($data);
     }
 }

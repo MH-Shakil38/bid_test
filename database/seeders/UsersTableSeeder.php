@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UsersTableSeeder extends Seeder
 {
@@ -41,5 +42,20 @@ class UsersTableSeeder extends Seeder
                 'password' => Hash::make('homeowner'),
             ],
         ]);
+        $faker = \Faker\Factory::create();
+        for ($i = 0; $i < 50; $i++) {
+            User::create([
+                'first_name' => $faker->firstName,
+                'last_name' => $faker->lastName,
+                'password' => Hash::make('password'), // You can also use bcrypt() or any other hashing method
+                'email' => $faker->unique()->safeEmail,
+                'mobile' => $faker->phoneNumber,
+                'country' => $faker->country,
+                'user_type' => $faker->randomElement([2, 3]),
+                'notification' => $faker->boolean,
+                'active' => 1,
+                'address' => $faker->address,
+            ]);
+        }
     }
 }

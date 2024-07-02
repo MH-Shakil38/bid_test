@@ -58,7 +58,7 @@
                                                         </div>
                                                         <div class="col-md-6">
                                                             <input type="number" name="max_price" class="form-control"
-                                                                   placeholder="Min Price" aria-label="price"
+                                                                   placeholder="Max Price" aria-label="price"
                                                                    aria-describedby="basic-addon1">
                                                         </div>
                                                     </div>
@@ -74,6 +74,12 @@
                                             <!--/span-->
                                         </div>
                                         <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Project Duration</label>
+                                                    <input type="text" name="duration" class="form-control">
+                                                </div>
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="control-label">Bid End Date</label>

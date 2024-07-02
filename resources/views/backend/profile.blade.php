@@ -17,11 +17,13 @@
                     </div>
                     <div class="col-md-9">
                         <div class="profile-head">
+                            @if(auth()->user()->id == $user->id)
                             <h3 class="m-b-0">{{$user->full_name}}
                                 <a class="profile-edit-btn" href="{{route('profile.edit')}}">
                                     <i class="mdi mdi-border-color"></i> Edit Profile
                                 </a>
                             </h3>
+                            @endif
                             <div class="user-email">
                                 <span>{{$user->email}}</span>
                             </div>
@@ -143,193 +145,193 @@
             </div>
         </form>
 
-        <div class="col-md-12 work-history-section">
-            <h3>Work History</h3>
-            <ul class="nav nav-tabs" id="profile" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="profile-one" data-toggle="tab" href="#one" role="tab" aria-controls="home" aria-selected="true">COMPLETED JOBS (2)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="profile-tow" data-toggle="tab" href="#tabTow" role="tab" aria-controls="tabTow" aria-selected="false">IN PROGRESS (5)</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="profile-one">
-                    <div class="mb-3 work-post-list">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Tongue and wood ceiling
-                                    <a href="javascript:void">
-                                        <i class="ti-heart float-right"></i>
-                                    </a>
-                                </h4>
-                                <div id="round-disabled" class="rating">
-                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                </div>
+{{--        <div class="col-md-12 work-history-section">--}}
+{{--            <h3>Work History</h3>--}}
+{{--            <ul class="nav nav-tabs" id="profile" role="tablist">--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link active" id="profile-one" data-toggle="tab" href="#one" role="tab" aria-controls="home" aria-selected="true">COMPLETED JOBS (2)</a>--}}
+{{--                </li>--}}
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link" id="profile-tow" data-toggle="tab" href="#tabTow" role="tab" aria-controls="tabTow" aria-selected="false">IN PROGRESS (5)</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--            <div class="tab-content" id="myTabContent">--}}
+{{--                <div class="tab-pane fade show active" id="one" role="tabpanel" aria-labelledby="profile-one">--}}
+{{--                    <div class="mb-3 work-post-list">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h4 class="card-title">Tongue and wood ceiling--}}
+{{--                                    <a href="javascript:void">--}}
+{{--                                        <i class="ti-heart float-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </h4>--}}
+{{--                                <div id="round-disabled" class="rating">--}}
+{{--                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;--}}
+{{--                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;--}}
+{{--                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;--}}
+{{--                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;--}}
+{{--                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">--}}
+{{--                                </div>--}}
 
-                                <p class="project-hours">
-                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>
-                                </p>
+{{--                                <p class="project-hours">--}}
+{{--                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>--}}
+{{--                                </p>--}}
 
-                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>
-                                <div class="d-flex justify-content-between">
+{{--                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>--}}
+{{--                                <div class="d-flex justify-content-between">--}}
 
-                                    <span class="text-muted">Project-add:
-                                        <span class="font-weight-bold">April 24, 2020</span>
-                                    </span>
+{{--                                    <span class="text-muted">Project-add:--}}
+{{--                                        <span class="font-weight-bold">April 24, 2020</span>--}}
+{{--                                    </span>--}}
 
-                                    <span class="text-muted float-right">
-                                        Total Bid: <span class="font-weight-bold">3</span>
-                                    </span>
-                                    <span class="text-muted float-right">
-                                        Bid Ending Time:
-                                        <span class="font-weight-bold text-danger">3h:30m</span>
-                                    </span>
+{{--                                    <span class="text-muted float-right">--}}
+{{--                                        Total Bid: <span class="font-weight-bold">3</span>--}}
+{{--                                    </span>--}}
+{{--                                    <span class="text-muted float-right">--}}
+{{--                                        Bid Ending Time:--}}
+{{--                                        <span class="font-weight-bold text-danger">3h:30m</span>--}}
+{{--                                    </span>--}}
 
-                                </div>
+{{--                                </div>--}}
 
-                                <a href="#" class="view-detail-btn">View Details</a>
+{{--                                <a href="#" class="view-detail-btn">View Details</a>--}}
 
-                            </div>
-                        </div>
-                    </div>
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="mb-3 work-post-list">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Tongue and wood ceiling
-                                    <a href="javascript:void">
-                                        <i class="ti-heart float-right"></i>
-                                    </a>
-                                </h4>
-                                <div id="round-disabled" class="rating">
-                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                </div>
+{{--                    <div class="mb-3 work-post-list">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h4 class="card-title">Tongue and wood ceiling--}}
+{{--                                    <a href="javascript:void">--}}
+{{--                                        <i class="ti-heart float-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </h4>--}}
+{{--                                <div id="round-disabled" class="rating">--}}
+{{--                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;--}}
+{{--                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;--}}
+{{--                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;--}}
+{{--                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;--}}
+{{--                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">--}}
+{{--                                </div>--}}
 
-                                <p class="project-hours">
-                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>
-                                </p>
+{{--                                <p class="project-hours">--}}
+{{--                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>--}}
+{{--                                </p>--}}
 
-                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>
-                                <div class="d-flex justify-content-between">
-                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>
-                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>
-                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>
+{{--                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>--}}
+{{--                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>--}}
+{{--                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>--}}
 
-                                </div>
-                                <a href="#" class="view-detail-btn">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+{{--                                </div>--}}
+{{--                                <a href="#" class="view-detail-btn">View Details</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="mb-3 work-post-list">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Tongue and wood ceiling
-                                    <a href="javascript:void">
-                                        <i class="ti-heart float-right"></i>
-                                    </a>
-                                </h4>
-                                <div id="round-disabled" class="rating">
-                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                </div>
+{{--                    <div class="mb-3 work-post-list">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h4 class="card-title">Tongue and wood ceiling--}}
+{{--                                    <a href="javascript:void">--}}
+{{--                                        <i class="ti-heart float-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </h4>--}}
+{{--                                <div id="round-disabled" class="rating">--}}
+{{--                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;--}}
+{{--                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;--}}
+{{--                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;--}}
+{{--                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;--}}
+{{--                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">--}}
+{{--                                </div>--}}
 
-                                <p class="project-hours">
-                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>
-                                </p>
+{{--                                <p class="project-hours">--}}
+{{--                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>--}}
+{{--                                </p>--}}
 
-                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>
-                                <div class="d-flex justify-content-between">
-                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>
-                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>
-                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>
+{{--                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>--}}
+{{--                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>--}}
+{{--                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>--}}
 
-                                </div>
-                                <a href="#" class="view-detail-btn">View Details</a>
-                            </div>
-                        </div>
-                    </div>
+{{--                                </div>--}}
+{{--                                <a href="#" class="view-detail-btn">View Details</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
 
-                    <div class="mb-3 work-post-list">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Tongue and wood ceiling
-                                    <a href="javascript:void">
-                                        <i class="ti-heart float-right"></i>
-                                    </a>
-                                </h4>
-                                <div id="round-disabled" class="rating">
-                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                </div>
+{{--                    <div class="mb-3 work-post-list">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h4 class="card-title">Tongue and wood ceiling--}}
+{{--                                    <a href="javascript:void">--}}
+{{--                                        <i class="ti-heart float-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </h4>--}}
+{{--                                <div id="round-disabled" class="rating">--}}
+{{--                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;--}}
+{{--                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;--}}
+{{--                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;--}}
+{{--                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;--}}
+{{--                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">--}}
+{{--                                </div>--}}
 
-                                <p class="project-hours">
-                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>
-                                </p>
+{{--                                <p class="project-hours">--}}
+{{--                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>--}}
+{{--                                </p>--}}
 
-                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>
-                                <div class="d-flex justify-content-between">
-                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>
-                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>
-                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>
+{{--                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>--}}
+{{--                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>--}}
+{{--                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>--}}
 
-                                </div>
-                                <a href="#" class="view-detail-btn">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+{{--                                </div>--}}
+{{--                                <a href="#" class="view-detail-btn">View Details</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
 
-                <div class="tab-pane fade" id="tabTow" role="tabpanel" aria-labelledby="profile-tow">
-                    <div class="mb-3 work-post-list">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="card-title">Tongue and wood ceiling
-                                    <a href="javascript:void">
-                                        <i class="ti-heart float-right"></i>
-                                    </a>
-                                </h4>
-                                <div id="round-disabled" class="rating">
-                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                </div>
+{{--                <div class="tab-pane fade" id="tabTow" role="tabpanel" aria-labelledby="profile-tow">--}}
+{{--                    <div class="mb-3 work-post-list">--}}
+{{--                        <div class="card">--}}
+{{--                            <div class="card-body">--}}
+{{--                                <h4 class="card-title">Tongue and wood ceiling--}}
+{{--                                    <a href="javascript:void">--}}
+{{--                                        <i class="ti-heart float-right"></i>--}}
+{{--                                    </a>--}}
+{{--                                </h4>--}}
+{{--                                <div id="round-disabled" class="rating">--}}
+{{--                                    <img width="15" alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;--}}
+{{--                                    <img width="15" alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;--}}
+{{--                                    <img width="15" alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;--}}
+{{--                                    <img width="15" alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;--}}
+{{--                                    <img width="15" alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">--}}
+{{--                                </div>--}}
 
-                                <p class="project-hours">
-                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>
-                                </p>
+{{--                                <p class="project-hours">--}}
+{{--                                    <span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span>--}}
+{{--                                </p>--}}
 
-                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>
-                                <div class="d-flex justify-content-between">
-                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>
-                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>
-                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>
+{{--                                <span class="mb-3 d-block">Many basement renovation contractors offer financing plans for your renovation projects. Therefore, if you’re overwhelmed with the costs of renovating a basement, it’s good to do your research in advance just to learn about your payment options...</span>--}}
+{{--                                <div class="d-flex justify-content-between">--}}
+{{--                                    <span class="text-muted">Project-add: <span class="font-weight-bold">April 24, 2020</span></span>--}}
+{{--                                    <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">3</span> </span>--}}
+{{--                                    <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">3h:30m</span> </span>--}}
 
-                                </div>
-                                <a href="#" class="view-detail-btn">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--                                </div>--}}
+{{--                                <a href="#" class="view-detail-btn">View Details</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
     </div>
 
     <script>

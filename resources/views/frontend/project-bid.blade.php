@@ -19,7 +19,7 @@
                                     <span class="text-muted">{{bid_date($info->created_at)}}</span>
 {{--                                    <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>--}}
                                     <span class="mb-3 d-block four-line-text">{!! $info->details !!} </span>
-                                    <a href="{{route('project.details',$info->id)}}">View job posting </a>
+                                    <a target="_blank" href="{{route('project.details',$info->id)}}">View job posting </a>
                                 </div>
                             </div>
                             <form action="{{route('bid-project-store')}}" method="post">
@@ -40,15 +40,15 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">$</span>
                                                     </div>
-                                                    <input type="text" class="form-control"
+                                                    <input type="text" class="form-control fixed_rate" id="price"
                                                            aria-label="Amount (to the nearest dollar)"
-                                                           name="fixed_rate">
+                                                           name="fixed_rate" required>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row border-bottom mt-4">
                                             <div class="col-lg-6">
-                                                <p><span class="font-weight-bold">20% Website Service Fee</span><br>
+                                                <p><span class="font-weight-bold" >{{commission_fee()}}% Website Service Fee</span><br>
                                                     Total amount the client will see on your proposal</p>
                                             </div>
                                             <div class="col-lg-4">
@@ -56,8 +56,8 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">$</span>
                                                     </div>
-                                                    <input type="text" class="form-control"
-                                                           aria-label="Amount (to the nearest dollar)" name="service_fee">
+                                                    <input type="text" class="form-control" disabled value="{{commission_fee()}}"
+                                                           aria-label="Amount (to the nearest dollar)" id="commission"  name="service_fee">
                                                 </div>
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                                         <span class="input-group-text">$</span>
                                                     </div>
                                                     <input type="text" class="form-control"
-                                                           aria-label="Amount (to the nearest dollar)" name="estimated_amount">
+                                                           aria-label="Amount (to the nearest dollar)" id="calculate" name="estimated_amount">
                                                 </div>
                                             </div>
                                         </div>
@@ -154,4 +154,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $('.fixed_rate').on('keyup', function() {
+                var price = parseFloat($('#price').val()) || 0;
+                var commission = parseFloat($('#commission').val()) || 0;
+                var total = (commission / 100) * price;
+                var total =  price - total;
+                $('#calculate').val(total.toFixed(2));
+            });
+        });
+    </script>
 @endsection

@@ -14,9 +14,12 @@
                                             <i class="ti-heart float-right"></i>
                                         </a>
                                     </h4>
-                                    <span class="text-muted">{{bid_date($info->created_at)}}</span>
+                                    <span class="text-muted">{{bid_date($info->created_at)}}</span><br>
+                                    <span class="text-bolder">Created By: {{$info->user->full_name}}</span>
+                                    <p class="project-hours"><span>Fixed</span> - Entry level -  More than
+                                        ({{$info->duration ?? '...'}}) months, <span class="text-primary"></span></p>
                                     <div class="d-flex justify-content-between pt-3">
-                                        <span class="text-muted">Project-add: <span class="font-weight-bold">{{bid_date($info->bid_date)}}</span></span>
+                                        <span class="text-muted">Project-add: <span class="font-weight-bold">{{bid_date($info->created_at)}}</span></span>
                                         <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">{{bid_count($info->id)}}</span> </span>
                                         <span class="text-muted float-right">Budget: <span class="font-weight-bold text-danger">${{$info->min_price}} - ${{$info->max_price}} </span> </span>
 {{--                                        <span class="text-muted float-right">Bid Ending Time: <span class="font-weight-bold text-danger">{{bid_time($info->bid_end)}}</span> </span>--}}
@@ -46,16 +49,24 @@
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <a href="{{route('project.bid',$info->id)}}" class="btn btn-primary w-100 mb-3">Bid Project</a>
-{{--                    <a href="{{route('project.bid',$info->id)}}" class="btn btn-warning w-100 mb-3">Ask Question</a>--}}
-{{--                    <p>Available Connects: 102</p>--}}
-                    <p><span class="font-weight-bold">{{user_projects($info->user_id)}} jobs posted</span>
-                        0% hire rate, {{user_projects($info->user_id, 1)}} open job
-                    </p>
-                    <p>Member since {{date('M d, Y', strtotime($info->user->created_at))}} </p>
-                    <a href="#">
-                        <img class="img-fluid" src="{{asset('/')}}images/banner.jpg" />
-                    </a>
+                        <div class="listing-right-block">
+                            <h4><a href="dashboard-page.html"><img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}"> Jhone Deo</a></h4>
+                            <h3>Proposals</h3>
+                            <ul>
+                                <li>
+                                    <a href="#">{{bidderProjectCountByStatus(0)}} active candidacy</a>
+                                </li>
+                                <li>
+                                    <a href="#">{{bidderProjectCountByStatus(3)}} submitted proposals</a>
+                                </li>
+                                <li>
+                                    <a href="#">{{bidderProjectCountByStatus(1)}} available connects</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#">
+                            <img class="img-fluid" src="{{asset('/')}}/images/banner.jpg" />
+                        </a>
                 </div>
             </div>
         </div>

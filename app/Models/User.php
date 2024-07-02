@@ -31,6 +31,7 @@ class User extends Authenticatable implements HasMedia
         'active',
         'notification',
         'address',
+        'details',
     ];
 
     const USER_TYPE_SUPERADMIN = 1;

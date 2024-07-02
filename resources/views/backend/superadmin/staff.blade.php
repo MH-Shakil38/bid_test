@@ -104,6 +104,17 @@
                                                 <textarea name="address" class="form-control"
                                                           rows="3"> {{$user->address ?? ''}} </textarea>
                                             </div>
+
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <p><span class="font-weight-bold">Description</span></p>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <textarea class="form-control" style="height:300px" name="details"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="col-xs-6 col-md-6 col-sm-6">

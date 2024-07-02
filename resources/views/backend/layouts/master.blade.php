@@ -61,7 +61,7 @@
                         <!-- User Profile-->
                         <div class="user-profile dropdown m-t-20">
                             <div class="user-pic">
-                                <img src="{{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}}" alt="{{auth()->user()->full_name}}" style="max-height: 52px"
+                                <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}" alt="{{auth()->user()->full_name}}" style="max-height: 59px"
                                      class="rounded-circle img-fluid"/>
                             </div>
                             <div class="user-content hide-menu m-t-10">

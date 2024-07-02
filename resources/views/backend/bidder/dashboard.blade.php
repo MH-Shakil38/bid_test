@@ -18,7 +18,7 @@
                             Total Bids on projects
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">20</h2>
+                            <h2 class="m-b-0 font-light">{{status_ways_project_by_bidder(null)->count()}}</h2>
                         </div>
                     </div>
                 </div>
@@ -34,10 +34,10 @@
                                     </span>
                         </div>
                         <div>
-                            Total Earning
+                            Active Project
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">$75</h2>
+                            <h2 class="m-b-0 font-light">{{status_ways_project_by_bidder(1)->count()}}</h2>
                         </div>
                     </div>
                 </div>
@@ -53,10 +53,10 @@
                                     </span>
                         </div>
                         <div>
-                            Project Porgress
+                            Complete Project
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">02</h2>
+                            <h2 class="m-b-0 font-light">{{status_ways_project_by_bidder(3)->count()}}</h2>
                         </div>
                     </div>
                 </div>
@@ -72,10 +72,10 @@
                                     </span>
                         </div>
                         <div>
-                            Reacent Project
+                            Total Earning
                         </div>
                         <div class="ml-auto">
-                            <h2 class="m-b-0 font-light">02</h2>
+                            <h2 class="m-b-0 font-light">{{bidder_total_earning()}}$</h2>
                         </div>
                     </div>
                 </div>
@@ -98,177 +98,32 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
-                <h4>Bid On Project</h4>
+            <div class="col-lg-12">
                 <div class="card">
-                    <div class="table-responsive">
-                        <table class="table v-middle">
-                            <thead>
-                            <tr class="bg-light">
-                                <th class="border-top-0">Projects Name</th>
-                                <th class="border-top-0">Contract</th>
-                                <th class="border-top-0">Budget</th>
-                                <th class="border-top-0">Bid Closing Time</th>
-                                <th class="border-top-0">Status</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-{{--                            @forelse($bids as $info)--}}
-{{--                                <tr>--}}
-{{--                                    <td>--}}
-{{--                                        <div class="d-flex align-items-center">--}}
-{{--                                            <div class="m-r-10">--}}
-{{--                                                <a class="btn btn-circle btn-danger text-white">EA</a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="">--}}
-{{--                                                <h4 class="m-b-0 font-16">{{$info->project->name}}</h4>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <label class="label label-danger">Park</label>--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <span class="text-muted">${{$info->project->max_price}}</span>--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        {{bid_date($info->project->bid_end)}} {{bid_time($info->project->bid_end)}}--}}
-{{--                                    </td>--}}
-{{--                                    <td>--}}
-{{--                                        <a href="view-details.html" class="label label-success label-rounded">Active</a>--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                            @empty--}}
-{{--                            @endforelse--}}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <h4>Active Projects</h4>
-                <div class="card">
-                    <div class="table-responsive">
-                        <table class="table v-middle">
-                            <thead>
-                            <tr class="bg-light">
-                                <th class="border-top-0">Projects Name</th>
-                                <th class="border-top-0">Contract</th>
-                                <th class="border-top-0">Start Date</th>
-                                <th class="border-top-0">Budget</th>
-                                <th class="border-top-0">Action</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
+                    <div class="card-body">
+                        <form class="form">
+                            <div class="form-group row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label">Search by Status</label>
+                                        <select class="form-control custom-select" name="status" id="status">
+                                            <option disabled selected>All</option>
+                                            @forelse(bid_status() as $bid)
+                                                <option value="{{$bid['id']}}">{{$bid['name']}}</option>
+                                            @empty
+                                            @endforelse
+                                        </select>
                                     </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Bedroom</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2019</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$70</span>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$70</span>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$120</span>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h4>Complete Project</h4>
+                <h4>Projects</h4>
                 <div class="card">
                     <div class="table-responsive">
                         <table class="table v-middle">
@@ -276,199 +131,59 @@
                             <tr class="bg-light">
                                 <th class="border-top-0">Projects Name</th>
                                 <th class="border-top-0">Contract</th>
-                                <th class="border-top-0">Start Date</th>
-                                <th class="border-top-0">End Date</th>
+                                <th class="border-top-0">Created Date</th>
+                                <th class="border-top-0">Price</th>
                                 <th class="border-top-0">Budget</th>
+                                <th class="border-top-0">Duration</th>
                                 <th class="border-top-0">Reviews/Rating</th>
                                 <th class="border-top-0">Action</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
+                            <tbody class="append-table">
+                            @forelse($projects as $info)
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <div class="m-r-10">
+                                                <a class="btn btn-circle btn-danger text-white">EA</a>
+                                            </div>
+                                            <div class="">
+                                                <h4 class="m-b-0 font-16">{{$info->project->title}}</h4>
+                                            </div>
                                         </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
+                                    </td>
+                                    <td>
+                                        <label class="label label-danger">{{$info->project->contract}}</label>
+                                    </td>
+
+                                    <td>
+                                        {{\Carbon\Carbon::parse($info->project->created_at)->format('d-M-Y')}}
+                                    </td>
+                                    <td>
+                                        {{$info->price}}
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">min:${{$info->project->min_price}}, Max: ${{$info->max_price}} </span>
+                                    </td>
+                                    <td>
+                                        {{$info->project->duration}}
+                                    </td>
+                                    <td>
+                                        <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
+                                            <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
+                                            <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
+                                            <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
+                                            <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
+                                            <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
-                                        <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                        <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                        <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                        <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                        <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
-                                        <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                        <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                        <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                        <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                        <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
-                                        <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                        <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                        <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                        <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                        <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 29, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
-                                        <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                        <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                        <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                        <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                        <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex align-items-center">
-                                        <div class="m-r-10">
-                                            <a class="btn btn-circle btn-danger text-white">EA</a>
-                                        </div>
-                                        <div class="">
-                                            <h4 class="m-b-0 font-16">Elite Admin</h4>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="label label-danger">Park</label>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 14, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">May 30, 2020</span>
-                                </td>
-                                <td>
-                                    <span class="text-muted">$250</span>
-                                </td>
-                                <td>
-                                    <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
-                                        <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
-                                        <img alt="2" src="../assets/images/rating/star-on.png" title="poor">&nbsp;
-                                        <img alt="3" src="../assets/images/rating/star-on.png" title="regular">&nbsp;
-                                        <img alt="4" src="../assets/images/rating/star-off.png" title="good">&nbsp;
-                                        <img alt="5" src="../assets/images/rating/star-off.png" title="gorgeous">
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="view-details.html" class="label label-success label-rounded">View
-                                        Details</a>
-                                </td>
-                            </tr>
+                                    </td>
+                                    <td>
+                                        <a href="{{route('bidder.bid.details',$info->id)}}" class="btn btn-info">Details</a>
+                                    </td>
+                                </tr>
+                            @empty
+                            @endforelse
+
                             </tbody>
                         </table>
                     </div>
@@ -476,4 +191,34 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function ajaxLoader(){
+            return `<h2 class="text-center loader no-record"><div class="spinner-border text-success"></div> Data Fetching.....</h2>`;
+        }
+        $(document).ready(function() {
+            function fetchProjects() {
+                $('.append-table').html(ajaxLoader());
+                var status = $('#status').val();
+                var type = 'search';
+
+                $.ajax({
+                    url: '{{ route("bidder.dashboard") }}',
+                    type: 'GET',
+                    data: {
+
+                        status  : status,
+                        type    : type,
+                    },
+                    success: function(data) {
+                        $('.append-table').html(data);
+                    }
+                });
+            }
+
+            $('#title').on('keyup', fetchProjects);
+            $('#date').on('change', fetchProjects);
+            $('#status').on('change', fetchProjects);
+        });
+    </script>
 @endsection

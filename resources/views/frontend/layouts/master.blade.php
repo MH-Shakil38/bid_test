@@ -15,7 +15,20 @@
 @include('frontend.layouts.include.header')
 
 @yield('content')
+<script>
+    $(document).ready(function() {
+        alert();
+        $('.fixed_rate').on('keyup', function() {
+            alert()
+            var price = parseFloat($('#price').val()) || 0;
+            var commission = parseFloat($('#commission').val()) || 0;
 
+            var total = price + (price * commission / 100);
+
+            $('#calculate').val(total.toFixed(2));
+        });
+    });
+</script>
 @include('frontend.layouts.include.footer')
 @include('frontend.layouts.include.footer-script')
 @include('alert.toaster-notification')

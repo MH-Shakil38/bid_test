@@ -34,8 +34,18 @@
                             <a href="{{route('job.post')}}" class="btn post-job-btn">post a job</a>
                         </li>
 
+                            <li class="nav-item">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <a href="#" class="btn post-job-btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                            </li>
                     @endif
+
                 </ul>
+
             </div>
         </div>
     </div>

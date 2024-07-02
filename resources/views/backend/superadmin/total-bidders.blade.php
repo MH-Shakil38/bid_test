@@ -50,7 +50,7 @@
                                 <img src="../assets/images/users/d1.jpg" alt="user" class="rounded-circle" width="45">
                             </div>
                             <div class="">
-                                <h4 class="m-b-0 font-16"><a href="../Bidder/profile.html">{{$bidder->full_name}}</a>
+                                <h4 class="m-b-0 font-16"><a href="{{route('profile',['id'=>$bidder->id])}}">{{$bidder->full_name}}</a>
                                 </h4>
                                 <div id="round-disabled" class="raiting-container" style="cursor: pointer;">
                                     <img alt="1" src="../assets/images/rating/star-on.png" title="bad">&nbsp;
@@ -62,17 +62,15 @@
                             </div>
                             <div class="bid-option">
                                 <span class="dots">...</span>
-                                <ul>
-                                    <li><a href="javascript:void()">Edit</a></li>
-                                    <li><a href="javascript:void()">Delete</a></li>
-                                </ul>
+{{--                                <ul>--}}
+{{--                                    <li><a href="javascript:void()">Edit</a></li>--}}
+{{--                                    <li><a href="javascript:void()">Delete</a></li>--}}
+{{--                                </ul>--}}
                             </div>
                         </div>
 
                         <p class="bider-bio">
-                            <label>Current Project:</label> (dummy) Renovated basements provide a unique space that is highly
-                            beneficial to your home. Having a private gym, a beautiful entertainment space or an
-                            additional guest room are just a few of the many perks about renovating your basement...
+                            <label>Current Bid:</label> {!! bidder_current_project($bidder->id)->cover_letter !!}
                         </p>
 
 {{--                        <div class="bidder-info-container">--}}

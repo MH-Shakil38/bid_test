@@ -6,29 +6,26 @@
 </li>
 
 
-{{--<li class="sidebar-item">--}}
-{{--    <a class="sidebar-link waves-effect waves-dark" href="{{route('total-project')}}" aria-expanded="false">--}}
-{{--        <i class="icon-Car-Wheel"></i>--}}
-{{--        <span class="hide-menu">Total Projects</span>--}}
-{{--    </a>--}}
-{{--</li>--}}
+<li class="sidebar-item">
+    <a class="sidebar-link has-arrow waves-effect waves-dark" href="dashboard.html" aria-expanded="false">
+        <i class="icon-Car-Wheel"></i>
+        <span class="hide-menu">Projects</span>
+    </a>
 
-
-<ul aria-expanded="false" class="collapse  first-level">
-    <li class="sidebar-item">
-        <a href="{{route('projects.create')}}" class="sidebar-link">
-            <i class="icon-Record"></i>
-            <span class="hide-menu">Create New</span>
-        </a>
-    </li>
-    <li class="sidebar-item">
-        <a href="{{route('projects.index')}}" class="sidebar-link">
-            <i class="icon-Record"></i>
-            <span class="hide-menu">Project List</span>
-        </a>
-    </li>
-
-</ul>
+    <ul aria-expanded="false" class="collapse  first-level">
+        <li class="sidebar-item">
+            <a href="{{route('projects.create')}}" class="sidebar-link">
+                <i class="icon-Record"></i>
+                <span class="hide-menu">Create New</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
+            <a href="{{route('projects.index')}}" class="sidebar-link">
+                <i class="icon-Record"></i>
+                <span class="hide-menu">Project List</span>
+            </a>
+        </li>
+    </ul>
 </li>
 
 <li class="sidebar-item">

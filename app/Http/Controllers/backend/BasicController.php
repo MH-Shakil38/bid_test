@@ -21,7 +21,7 @@ class BasicController extends Controller
         if (user_type() == 1){
             return view('backend.dashboard')->with($data);
         }elseif (user_type() == 2){
-            return view('backend.bidder.dashboard')->with($data);
+            return redirect()->route('bidder.dashboard');
         }elseif (user_type() == 3){
             $data['projects'] = Project::query()->where('user_id', Auth::id())->get();
             return view('backend.owner.dashboard')->with($data);
@@ -51,7 +51,7 @@ class BasicController extends Controller
     }
 
     public function homeOwners(Request $request,BidService $bidService){
-        $data['bidders'] = $bidService->getUser(User::USER_TYPE_OWNER);
+        $data['owners'] = $bidService->getUser(User::USER_TYPE_OWNER);
         if ($request->ajax()) {
             $html =  view('backend.content.total-bidder')->with($data)->render();
             return response()->json(['data'=>$html]);

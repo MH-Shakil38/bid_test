@@ -61,7 +61,7 @@
                                                     </div>
                                                     <div class="col-md-6">
                                                         <input type="number" name="max_price" class="form-control"
-                                                               placeholder="Min Price" aria-label="price"
+                                                               placeholder="Max Price" aria-label="price"
                                                                aria-describedby="basic-addon1">
                                                     </div>
                                                 </div>

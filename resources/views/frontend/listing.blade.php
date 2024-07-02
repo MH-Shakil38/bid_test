@@ -20,7 +20,7 @@
                 <div class="col-lg-3">
                     <div class="filter card">
                         <div class="card-body">
-                            <h4 class="mt-0">Recent Search</h4>
+                            {{-- <h4 class="mt-0">Recent Search</h4>
                             <ul>
                                 <li>
                                     <a href="#">Basement Renovations</a>
@@ -40,27 +40,15 @@
                                 <li>
                                     <a href="#">3D AutoCAD Modeling</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                             <h4 class="mt-4">My Categories</h4>
                             <ul>
-                                <li>
-                                    <a href="#">Basement Renovations</a>
-                                </li>
-                                <li>
-                                    <a href="#">Basement Finishing</a>
-                                </li>
-                                <li>
-                                    <a href="#">Basement Suite</a>
-                                </li>
-                                <li>
-                                    <a href="#">Personal Use</a>
-                                </li>
-                                <li>
-                                    <a href="#">Building Permits</a>
-                                </li>
-                                <li>
-                                    <a href="#">3D AutoCAD Modeling</a>
-                                </li>
+                                @forelse(categories() as $category)
+                                    <li>
+                                        <a href="{{route('find.project',['category'=>$category->id])}}">{{$category->name}}</a>
+                                    </li>
+                                @empty
+                                @endforelse
                             </ul>
                         </div>
                     </div>
@@ -82,12 +70,13 @@
                                                         <i class="ti-heart float-right"></i>
                                                     </a>
                                                 </h4>
-                                                <p class="project-hours"><span>Fixed</span> - Entry level -  More than 6 months, <span class="text-primary">300$+</span></p>
+                                                <p class="project-hours"><span>Fixed</span> - Entry level -  More than
+                                                    ({{$info->duration ?? '...'}}) months, <span class="text-primary"><br>Budget: {{$info->max_price}}$-{{$info->min_price}}$</span></p>
                                                 <span class="mb-3 d-block four-line-text">{!! $info->details !!}</span>
                                                 <div class="d-flex justify-content-between">
                                                     <span class="text-muted">Project-add: <span class="font-weight-bold">{{bid_date($info->created_at)}}</span></span>
                                                     <span class="text-muted float-right">Total Bid: <span class="font-weight-bold">{{bid_count($info->id)}}</span> </span>
-                                                    <span class="text-muted float-right">Bid End Time: <span class="font-weight-bold text-danger">{{ bid_time($info->bid_end)}}</span> </span>
+{{--                                                    <span class="text-muted float-right">Bid End Time: <span class="font-weight-bold text-danger">{{ bid_time($info->bid_end)}}</span> </span>--}}
                                                 </div>
                                                 <hr>
                                                 <div class="d-flex no-block float-right align-items-center">
@@ -105,17 +94,19 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="listing-right-block">
-                        <h4><a href="dashboard-page.html"><img src="images/john.png"> Jhone Deo</a></h4>
+                        <h4>
+                            <a href="{{route('profile')}}">
+                                <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}"> {{auth()->user()->full_name}}</a></h4>
                         <h3>Proposals</h3>
                         <ul>
                             <li>
-                                <a href="#">1 active candidacy</a>
+                                <a href="#">{{bidderProjectCountByStatus(0)}} active candidacy</a>
                             </li>
                             <li>
-                                <a href="#">23 submitted proposals</a>
+                                <a href="#">{{bidderProjectCountByStatus(3)}} submitted proposals</a>
                             </li>
                             <li>
-                                <a href="#">102 available connects</a>
+                                <a href="#">{{bidderProjectCountByStatus(1)}} available connects</a>
                             </li>
                         </ul>
                     </div>

@@ -25,10 +25,11 @@
                                             class="font-weight-bold">{{bid_date($project->created_at)}}</span></span>
                     <span class="text-muted float-right">Total Bid: <span
                             class="font-weight-bold">{{bid_count($project->id)}}</span> </span>
-                    <span class="text-muted float-right">Bid Ending Time: <span
-                            class="font-weight-bold text-danger">{{bid_time($project->bid_end)}}</span> </span>
+{{--                    <span class="text-muted float-right">Bid Ending Time: <span--}}
+{{--                            class="font-weight-bold text-danger">{{bid_time($project->bid_end)}}</span> </span>--}}
                 </div>
-                <p class="project-hours pt-3"><span>Fixed</span> - More than 6 months, 300$</p>
+                <p class="project-hours pt-3"><span>Fixed</span> - More than ({{$project->duration ?? '...'}}) months, Budget:
+                    {{$project->min_price}}$ - {{$project->max_price}}$ </p>
 
                 <span class="mb-3 d-block four-line-text">{!! substr( $project->details , 0 ,400) !!}
                                         ....<a href="{{route('view.project-details',$project->id)}}">read more </a>

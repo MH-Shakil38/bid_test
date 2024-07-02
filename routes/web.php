@@ -21,14 +21,15 @@ Route::get('/project-bid/{projectId}', [HomeController::class, 'projectBid'])->n
 Route::get('/find', [HomeController::class, 'findProject'])->name('find.project');
 
 /**backend*/
-
-
 Route::get('/dashboard',[BasicController::class,'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
 
     Route::get('change-status', [HomeController::class, 'changeStatus'])->name('change.status');
     Route::get('bid-details/{id}', [BidController::class, 'bidDetails'])->name('bid.details');
+
+    /**invoice*/
+    Route::get('bid-invoice/{bidId}', [BidController::class, 'bidInvoice'])->name('bid.invoice');
 
     /**owner route*/
     Route::group(['prefix' => 'owner'], function () {
@@ -40,13 +41,15 @@ Route::middleware('auth')->group(function () {
     /**bidder route*/
     Route::group(['prefix' => 'bidder'], function () {
         Route::get('/dashboard', [BidderController::class, 'dashboard'])->name('bidder.dashboard');
+        Route::get('/bid-details/{id}', [BidderController::class, 'bidDetails'])->name('bidder.bid.details');
+        Route::get('/bid-on-project', [BidderController::class, 'bidOnProject'])->name('bidder.bid-on-project');
     });
 
 
     /**page/menu route*/
     /**bidder route*/
     Route::group(['prefix' => 'dashboard'], function () {
-        Route::get('/total-project', [ProjectController::class, 'totalProject'])->name('total-project');
+        Route::get('/total-project', [ProjectController::class, 'index'])->name('total-project');
         Route::get('/total-bids', [BasicController::class, 'totalBids'])->name('total-bids');
         Route::get('/total-bidders', [BasicController::class, 'totalBidders'])->name('total-bidders');
         Route::get('/home-owners', [BasicController::class, 'homeOwners'])->name('home-owners');

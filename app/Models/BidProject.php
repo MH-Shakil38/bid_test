@@ -33,6 +33,6 @@ class BidProject extends Model
 
     static function findById($id)
     {
-        return self::query()->findOrFail($id);
+        return self::query()->with('user')->findOrFail($id);
     }
 }
