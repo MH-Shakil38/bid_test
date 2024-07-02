@@ -34,14 +34,12 @@
                     <div class="col-lg-3">
                         <p>Total Bids : {{bid_count($project->id)}}</p>
                         <p>Bid End Date: {{bid_date($project->due_date)}}</p>
-                        <p>Bid End Time: {{bid_time($project->bid_end)}}</p>
                         <p>Status: {!! status($project->status)  !!}</p>
                     </div>
                 </div>
             </div>
             @if(isset($activeBid) && $activeBid !=null)
                 <h4>Active Bid's</h4>
-                <a href="{{route('bid.details',$activeBid->id)}}" class="text-decoration-none" style="color: #0b0b0b">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card bg-success-light">
@@ -61,14 +59,14 @@
                                         </div>
                                     </h4>
                                     <span class="text-muted">{{bid_date($activeBid->created_at)}}</span>
+                                    <a href="{{route('bid.details',$activeBid->id)}}" class="text-decoration-none" style="color: #0b0b0b">
                                     <span class="mb-3 d-block">{!! $activeBid->cover_letter !!}</span>
-
-
+                                    </a>
+                                    <a href="{{route('bid.details',$activeBid->id)}}" class="text-decoration-none float-right" style="color: #0b0b0b">Details...</a>
                                 </div>
                             </div>
                         </div>
                 </div>
-                </a>
             @endif
             <h4>All Bid's</h4>
             <div class="row">
@@ -79,7 +77,7 @@
                         <div class="card-body">
                             <!-- Comment Row -->
                             @if($bid->status == 0)
-                                <button class="btn btn-info float-right" onclick="changeStatus({{$bid->id}},'BidProject',1)"> Accept </button>
+                                <a class="btn btn-info float-right text-white" href="{{route('bid.details',$bid->id)}}"> Pending... </a>
                             @elseif($bid->status == 4)
                                 <button class="btn btn-success float-right"> Rejected </button>
                             @endif

@@ -10,7 +10,11 @@ class ProjectService
     {
         $request = request();
         $query = Project::query();
-        $query = user_type() == 3 ? $query->where('user_id',auth()->user()->id) : $query;
+        if ($request->type == 'frontend'){
+            $query;
+        }else{
+            $query = user_type() == 3 ? $query->where('user_id',auth()->user()->id) : $query;
+        }
         isset($request->title) ?  $query->where('title', 'LIKE', '%' . $request->title . '%') : $query;
         isset($request->category) ?  $query->where('category_id', $request->category) : $query;
         isset($request->date) ?  $query->where('created_at', 'like', '%' . $request->date . '%') : $query;

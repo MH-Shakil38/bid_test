@@ -6,7 +6,7 @@
             <div class="row">
                     <div class="col-md-3">
                         <div class="profile-img">
-                            <span id="imagePreview" style="background-image: url({{auth()->user()->getFirstMediaUrl("*") ?? asset('images/logo-icon.png')}})"></span>
+                            <span id="imagePreview" style="background-image: url({{auth()->user()->getFirstMediaUrl("profile_picture") ?? asset('thumbnail.png')}})"></span>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="profile_picture" id="imageInput" accept="image/*"/>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -44,7 +45,7 @@ class UsersTableSeeder extends Seeder
         ]);
         $faker = \Faker\Factory::create();
         for ($i = 0; $i < 50; $i++) {
-            User::create([
+            User::query()->create([
                 'first_name' => $faker->firstName,
                 'last_name' => $faker->lastName,
                 'password' => Hash::make('password'), // You can also use bcrypt() or any other hashing method
@@ -55,6 +56,7 @@ class UsersTableSeeder extends Seeder
                 'notification' => $faker->boolean,
                 'active' => 1,
                 'address' => $faker->address,
+                'details' => $faker->paragraph,
             ]);
         }
     }

@@ -13,7 +13,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('projects.update',$project->id)}}" method="POST">
+                                <form action="{{route('projects.update',$project->id)}}" method="POST" enctype="multipart/form-data">
                                     @method('PATCH')
                                     @csrf
                                     <div class="form-body">
@@ -119,10 +119,10 @@
                                                 </div>
                                             </div>
                                             @endif
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="card text-center pt-3">
                                                     <div class="card-body" style="height:90px">
-                                                        Upload image here
+                                                        <input type="file" name="images[]" multiple>
                                                     </div>
                                                 </div>
                                             </div>

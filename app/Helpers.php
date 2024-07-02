@@ -136,10 +136,24 @@ if (!function_exists('categories')) {
 if (!function_exists("thumbnail")){
     function thumbnail($image){
         $placeholder = asset('thumbnail.png');
+        if ($image == "" || $image == null){
+            return $placeholder;
+        }
 
         $headers = @get_headers($placeholder);
         $isImageAvailable = $headers && strpos($headers[0], '200');
-        return $isImageAvailable ? $placeholder : $placeholder;
+        return $isImageAvailable ? $image : $placeholder;
+    }
+}
+if (!function_exists("profile_pic_check")){
+    function profile_pic_check($image){
+        $placeholder = asset('thumbnail.png');
+        if ($image == ""){
+            return $placeholder;
+        }
+        $headers = @get_headers($placeholder);
+        $isImageAvailable = $headers && strpos($headers[0], '200');
+        return $isImageAvailable ? $image : $placeholder;
     }
 }
 if (!function_exists("dayMonthCalculate")){
@@ -203,6 +217,12 @@ if (!function_exists("owner_latest_project")){
         return \App\Models\Project::query()
             ->where('user_id', $ownerId)
             ->first();
+    }
+}
+
+if (!function_exists("total_bid_on_project")){
+    function total_bid_on_project(){
+        return \App\Models\BidProject::query()->get()->unique('project_id')->count();
     }
 }
 

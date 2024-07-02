@@ -11,7 +11,14 @@
                                     <h4>Job details</h4>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="card-title mb-0">{{$info->title}}
+                                    <a href="#" class="whislist"><i class="fas fa-heart"></i></a>
+                                    <h4 class="card-title">{{$info->title}}
+                                        <a href="javascript:void">
+                                            <i class="ti-heart float-right"></i>
+                                        </a>
+                                    </h4>
+                                    <p class="project-hours"><span>Fixed</span> - Entry level -  More than
+                                        ({{$info->duration ?? '...'}}), <span class="text-primary"><br>Budget: {{$info->min_price}}$-{{$info->max_price}}$</span></p>
                                         <a href="javascript:void">
                                             <i class="ti-heart float-right"></i>
                                         </a>
@@ -22,7 +29,7 @@
                                     <a target="_blank" href="{{route('project.details',$info->id)}}">View job posting </a>
                                 </div>
                             </div>
-                            <form action="{{route('bid-project-store')}}" method="post">
+                            <form action="{{route('bid-project-store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <input type="hidden" name="project_id" value="{{$info->id}}">
                                 <div class="card mt-4">
@@ -120,8 +127,8 @@
                 <div class="col-lg-3">
                     <a href="#" class="btn btn-primary w-100 mb-3" data-toggle="modal" data-target="#exampleModal">Submit
                         Perposal</a>
-                    <p>Required Connects to submit a proposal: 6</p>
-                    <p>Available Connects: 102</p>
+{{--                    <p>Required Connects to submit a proposal: 6</p>--}}
+                    <p>Total Bid On Project: {{bid_count($info->id)}}</p>
                     <p><span class="font-weight-bold">2 jobs posted</span>
                         0% hire rate, 1 open job
                     </p>

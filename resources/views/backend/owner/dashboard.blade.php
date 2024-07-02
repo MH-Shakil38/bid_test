@@ -50,6 +50,7 @@
                                 <th class="border-top-0">Budget</th>
                                 <th class="border-top-0">Bid Closing Time</th>
                                 <th class="border-top-0">Status</th>
+                                <th class="border-top-0">Action</th>
                             </tr>
                             </thead>
                             <tbody class="append-table">
@@ -58,10 +59,10 @@
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <div class="m-r-10">
-                                                <a class="btn btn-circle btn-danger text-white">EA</a>
+                                                <a class="btn btn-circle btn-danger text-white">{{substr($info->title,0,2)}}</a>
                                             </div>
                                             <div class="">
-                                                <h4 class="m-b-0 font-16">{{$info->title}}</h4>
+                                                <h4 class="m-b-0 font-16">{{substr($info->title,0,50)}}...</h4>
                                             </div>
                                         </div>
                                     </td>
@@ -78,12 +79,14 @@
                                         <a href="{{route('view.project-details',$info->id)}}">
                                             {!! status($info->status)  !!}
                                         </a>
+                                    </td>
+                                    <td>
+
                                         <a href="{{route('projects.edit',$info->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @empty
                             @endforelse
-
                             </tbody>
                         </table>
                     </div>

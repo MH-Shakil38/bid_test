@@ -8,9 +8,9 @@
                 </div>
                 <div class="col-md-7">
                     <div class="input-group">
-                        <input type="text" placeholder="Find Work" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                        <input type="text" placeholder="Find Work" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="title" id="titleInput">
                         <div class="input-group-prepend">
-                            <a href="#" class="btn btn-primary" id="inputGroup-sizing-sm">Search</a>
+                            <a href="#" class="btn btn-primary" id="inputGroup-sizing-sm" onclick="submitTitle()">Search</a>
                         </div>
                     </div>
                     <a href="#">Advance Search</a>
@@ -45,7 +45,7 @@
                             <ul>
                                 @forelse(categories() as $category)
                                     <li>
-                                        <a href="{{route('find.project',['category'=>$category->id])}}">{{$category->name}}</a>
+                                        <a href="{{route('find.project',['category'=>$category->id,'type'=>'frontend'])}}">{{$category->name}}</a>
                                     </li>
                                 @empty
                                 @endforelse
@@ -59,9 +59,10 @@
                             <div class="col-lg-12 mb-3">
                                 <div class="card">
                                     <div class="card-body">
+
                                         <div class="row">
                                             <div class="col-lg-3 pr-0">
-                                                <img class="img-fluid pro-img border" src="images/ff.jpg" alt="product-img" />
+                                                <img class="img-fluid pro-img border" src="{{thumbnail(@$info->getMedia('*')[0]?->getFullUrl() ?? null)}}" alt="product-img" />
                                             </div>
                                             <div class="col-lg-9">
                                                 <a href="#" class="whislist"><i class="fas fa-heart"></i></a>
@@ -71,7 +72,7 @@
                                                     </a>
                                                 </h4>
                                                 <p class="project-hours"><span>Fixed</span> - Entry level -  More than
-                                                    ({{$info->duration ?? '...'}}) months, <span class="text-primary"><br>Budget: {{$info->max_price}}$-{{$info->min_price}}$</span></p>
+                                                    ({{$info->duration ?? '...'}}) months, <span class="text-primary"><br>Budget: {{$info->min_price}}$-{{$info->max_price}}$</span></p>
                                                 <span class="mb-3 d-block four-line-text">{!! $info->details !!}</span>
                                                 <div class="d-flex justify-content-between">
                                                     <span class="text-muted">Project-add: <span class="font-weight-bold">{{bid_date($info->created_at)}}</span></span>
@@ -117,5 +118,13 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function submitTitle() {
+            const titleValue = document.getElementById('titleInput').value;
+            const route = "{{route('find.project')}}";
+            window.location.href = `${route}?title=${encodeURIComponent(titleValue)}&type=frontend`;
+        }
+    </script>
 @endsection
 

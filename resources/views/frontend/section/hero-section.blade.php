@@ -10,6 +10,6 @@
     function submitTitle() {
         const titleValue = document.getElementById('titleInput').value;
         const route = "{{route('find.project')}}";
-        window.location.href = `${route}?title=${encodeURIComponent(titleValue)}`;
+        window.location.href = `${route}?title=${encodeURIComponent(titleValue)}&type=frontend`;
     }
 </script>

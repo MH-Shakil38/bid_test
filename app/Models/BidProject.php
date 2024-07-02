@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class BidProject extends Model
+class BidProject extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
     protected $table = 'bid_projects';
     protected $fillable = [
         'user_id',
@@ -34,5 +36,10 @@ class BidProject extends Model
     static function findById($id)
     {
         return self::query()->with('user')->findOrFail($id);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('bid_file')->singleFile();
     }
 }

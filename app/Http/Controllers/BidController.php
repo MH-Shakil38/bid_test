@@ -15,7 +15,12 @@ class BidController extends Controller
     public function bidProjectStore(Request $request,BidService $bidService){
         try {
             DB::beginTransaction();
-            $bidService->bidStore();
+            $bid = $bidService->bidStore();
+            // Add PDF file to the media collection
+            if ($request->hasFile('file')) {
+                $bid->addMedia($request->file('file'))
+                    ->toMediaCollection('bid_file');
+            }
             DB::commit();
             return redirect()->back()->with('success','Bid Proposal has been Send');
         }catch (\Exception $e){

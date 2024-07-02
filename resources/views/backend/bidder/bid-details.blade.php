@@ -41,9 +41,10 @@
                                     </div>
                                     <div class="card-body">
                                         <span class="text-bolder">Price: {{$bid->price}}</span><br>
-                                        <span class="text-bolder">Budget: {{$bid->project->min_price}}$ - {{$bid->project->max_price}}$</span>
-                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span>
-                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span>
+                                        <span class="text-bolder">Budget: {{$bid->project->min_price}}$ - {{$bid->project->max_price}}$</span><br>
+                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span><br>
+                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span><br>
+                                        <span class="text-bolder">View File: <a target="_blank" href="{{$bid->getFirstMediaUrl("bid_file")}}">View</a></span><br>
                                     </div>
 
                                 </div>

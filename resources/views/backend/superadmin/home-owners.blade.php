@@ -70,7 +70,7 @@
                         </div>
 
                         <p class="bider-bio">
-                            <label>Current Project: </label> <p>{!! owner_latest_project($owner->id)->details !!}</p>
+                            <label>Profile: </label> <p>{{$owner->details}}</p>
                         </p>
 
 {{--                        <div class="bidder-info-container">--}}

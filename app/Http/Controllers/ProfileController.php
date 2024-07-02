@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
@@ -105,13 +106,20 @@ class ProfileController extends Controller
 
     public function uploadProfileImage(Request $request)
     {
-        $user = Auth::user();
-        if ($request->hasFile('profile_picture')) {
-            $user->clearMediaCollection('profile_picture'); // Clear existing profile image
-            $user->addMediaFromRequest('profile_picture')->toMediaCollection('profile_picture');
-            return redirect()->back()->with('success', 'Profile Picture Successfully Updated');
+        try {
+            DB::beginTransaction();
+            $user = Auth::user();
+            if ($request->hasFile('profile_picture')) {
+                $user->clearMediaCollection('profile_picture'); // Clear existing profile image
+                $user->addMediaFromRequest('profile_picture')->toMediaCollection('profile_picture');
+            }
+            DB::commit();
+            return \redirect()->back()->with('success', 'Profile Image Uploaded');
+        }catch (\Throwable $e){
+            DB::rollBack();
+            dd($e->getMessage(), $e->getTrace(),$e->getPrevious());
+            return redirect()->back()->with('error', 'File not uploaded');
         }
-        return redirect()->back()->with('error', 'File not uploaded');
     }
 //$project->addMedia($file)
 //->usingName('project/'.$data['user_id'] )

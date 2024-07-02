@@ -28,7 +28,6 @@ class ProjectController extends Controller
         $data['categories'] = Category::all();
         return view('backend.create-project')->with($data);
     }
-
     public function store(ProjectStoreRequest $request)
     {
         try {
@@ -74,11 +73,12 @@ class ProjectController extends Controller
             if ($request->hasFile('images')) {
                 foreach ($request->file('images', []) as $file) {
                     $project['project']->addMedia($file)
-                        ->usingName('project/'.$data['user_id'] )
+                        ->usingName('project/'.$project['project']->user_id )
                         ->toMediaCollection('project', 'public');
                 }
             }
             DB::commit();
+            return redirect()->back()->with('success','Project updated successfully');
             return view('backend.view-project-details')->with($project);
 
         }catch (\Exception $e) {

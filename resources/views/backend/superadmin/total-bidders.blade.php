@@ -47,7 +47,7 @@
                     <div class="bidder-block">
                         <div class="d-flex align-items-center">
                             <div class="m-r-10">
-                                <img src="../assets/images/users/d1.jpg" alt="user" class="rounded-circle" width="45">
+                                <img src="{{profile_pic_check($bidder->getFirstMediaUrl("profile_picture"))}}" alt="user" class="rounded-circle" width="45">
                             </div>
                             <div class="">
                                 <h4 class="m-b-0 font-16"><a href="{{route('profile',['id'=>$bidder->id])}}">{{$bidder->full_name}}</a>
@@ -70,7 +70,7 @@
                         </div>
 
                         <p class="bider-bio">
-                            <label>Current Bid:</label> {!! bidder_current_project($bidder->id)->cover_letter !!}
+                            <label>Profile:</label> {{$bidder->details}}
                         </p>
 
 {{--                        <div class="bidder-info-container">--}}

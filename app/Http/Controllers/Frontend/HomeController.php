@@ -61,7 +61,7 @@ class HomeController extends Controller
 
     public function findProject(Request $request, ProjectService $projectService,)
     {
-        $data['projects'] = Project::query()->where('status',0)->get();
+        $data['projects'] = $projectService->projects();
         return view('frontend.listing')->with($data);
     }
 }

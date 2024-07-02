@@ -14,7 +14,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form action="{{route('projects.store')}}" method="post">
+                                <form action="{{route('projects.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-body">
                                         <div class="row">
@@ -109,7 +109,7 @@
                                             <div class="col-12">
                                                 <div class="card text-center pt-3">
                                                     <div class="card-body" style="height:90px">
-                                                        Upload image here
+                                                        <input type="file" name="images[]" multiple>
                                                     </div>
                                                 </div>
                                             </div>
@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="form-actions mt-4">
                                         <button type="submit" class="btn btn-success" value="0" name="submit"><i class="fa fa-check"></i> Publish</button>
-                                        <button type="submit" class="btn btn-success" value="3" name="submit"><i class="fa fa-check"></i> Save as a Draft</button>
+{{--                                        <button type="submit" class="btn btn-success" value="3" name="submit"><i class="fa fa-check"></i> Save as a Draft</button>--}}
                                     </div>
                                 </form>
                             </div>

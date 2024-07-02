@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="row">
-                            <div class="col-lg-12 mb-3">
+                            <div class="col-lg-9 mb-3">
                                 <div class="card">
                                     <div class="card-body">
                                         <!-- Comment Row -->
@@ -82,11 +82,26 @@
                                         <hr>
                                         {{--                                        <p class="project-hours pt-3"><span>Fixed</span> - Expert level -  More than 6 months, 300+ $ - Renewed 17 minutes ago</p>--}}
                                         <span class="mb-3 d-block">{!! $bid->cover_letter !!}</span>
-                                        <p class="project-images"> </h4>
+                                        <p class="project-images">
 
                                         </p>
 
                                     </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card">
+                                    <div class="card-header">
+
+                                    </div>
+                                    <div class="card-body">
+                                        <span class="text-bolder">Price: {{$bid->price}}</span><br><br>
+                                        <span class="text-bolder">Budget: {{$bid->project->min_price}}$ - {{$bid->project->max_price}}$</span><br>
+                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span><br>
+                                        <span class="text-bolder">Project Duration: {{$bid->project->duration}}</span><br>
+                                        <span class="text-bolder">View File: <a href="{{$bid->getFirstMediaUrl("bid_file")}}" target="_blank" >View</a></span>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

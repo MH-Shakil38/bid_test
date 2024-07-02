@@ -14,7 +14,7 @@
                             @endforelse
                         </select>
                     </div>
-                    <span class="total-bid-label">Total Bid ({{total_bid_count()}})</span>
+                    <span class="total-bid-label">Total Bid ({{total_bid_on_project()}})</span>
 {{--                    <a class="download-csv-btn" href="javascript:void()">Download CSV</a>--}}
                 </div>
 
