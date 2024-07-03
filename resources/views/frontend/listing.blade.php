@@ -97,7 +97,7 @@
                     <div class="listing-right-block">
                         <h4>
                             <a href="{{route('profile')}}">
-                                <img src="{{thumbnail(auth()->user()->getFirstMediaUrl("*"))}}"> {{auth()->user()->full_name}}</a></h4>
+                                <img src="{{thumbnail(auth()->user()?->getFirstMediaUrl("*"))}}"> {{auth()->user()?->full_name}}</a></h4>
                         <h3>Proposals</h3>
                         <ul>
                             <li>

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="logo col-md-4">
-                <a href="{{route('home')}}"><img src="images/logo.png" alt="construction"/></a>
+                <a href="{{route('home')}}"><img src="{{asset('/')}}/images/logo.png" alt="construction"/></a>
             </div>
             <div class="post-job col-md-6">
                 <ul class="navbar-nav header-top">
